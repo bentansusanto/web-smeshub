@@ -8,7 +8,7 @@ import React from 'react'
 const MediaLiputSection = () => {
     const {isMobile} = Mobile()
   return (
-    <div className={`${isMobile? "px-5" : "xl:px-32 lg:px-20 md:px-8"} mt-40`}>
+    <div className={`${isMobile? "px-5" : "xl:px-32 lg:px-20 md:px-8"} mt-40 mb-64`}>
         <div className="text-center mx-auto space-y-3 max-w-3xl">
         <h1
           className={`${heading.className} font-semibold xl:text-[24px] lg:text-[18px] text-2xl leading-snug`}

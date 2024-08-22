@@ -13,7 +13,7 @@ const Footer = () => {
   const { isMobile } = Mobile();
   const date = new Date().getFullYear()
   return (
-    <div className="bg-[#001236] w-screen mt-64 h-full relative md:pb-10 pb-5">
+    <div className="bg-[#001236] w-screen h-full relative md:pb-10 pb-5">
       <CTASection />
       <div
         className={`${

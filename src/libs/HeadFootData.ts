@@ -1,7 +1,7 @@
 export const navData = [
     {
         page: "About Us",
-        link: "/about"
+        link: "/about-us"
     },
     {
         page: "SmesXperience",
