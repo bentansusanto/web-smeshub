@@ -5,15 +5,15 @@ export const navData = [
     },
     {
         page: "SmesXperience",
-        link: "/smesh-xperience"
+        link: "/smes-xperience"
     },
     {
         page: "SmesXpert",
-        link: "/smesh-xpert"
+        link: "/smes-xpert"
     },
     {
         page: "SmesPeople",
-        link: "/smesh-people"
+        link: "/smes-people"
     },
     {
         page: "Kolaborasi",

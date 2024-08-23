@@ -22,7 +22,7 @@ const Header = () => {
     >
       {isMobile ? (
         // Mobile Device
-        <div className="relative">
+        <div className="relative z-40">
           <div className={`${open? "bg-gray-100" : "bg-ray-50"} transition-all duration-300 flex items-center justify-between px-5 py-4`}>
             <Link href={"/"}>
               <Image

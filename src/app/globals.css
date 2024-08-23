@@ -5,3 +5,7 @@
 body {
   @apply bg-[#fafafa];
 }
+
+p{
+  @apply text-[15px]
+}
