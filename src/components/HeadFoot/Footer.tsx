@@ -8,6 +8,7 @@ import { contactCompany, navData } from "@/libs/HeadFootData";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { FiLinkedin, FiYoutube } from "react-icons/fi";
+import { programSmeshub } from "@/libs/SmesExperienceData";
 
 const Footer = () => {
   const { isMobile } = Mobile();
@@ -52,7 +53,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="flex lg:flex-row flex-wrap md:mt-0 mt-14 gap-10 lg:justify-between xl:max-w-4xl w-full">
+        <div className="flex lg:flex-row flex-col md:mt-0 mt-14 gap-10 lg:justify-between xl:max-w-4xl w-full">
           {/* Quicklink */}
           <div className="space-y-5 text-white">
             <p className="text-lg font-semibold">Quicklinks</p>
@@ -66,11 +67,11 @@ const Footer = () => {
           </div>
           {/* Quicklink */}
           <div className="space-y-5 text-white">
-            <p className="text-lg font-semibold">Services</p>
+            <p className="text-lg font-semibold">Smeshub Program</p>
             <ul className="space-y-3">
-              {navData.map((list, idx) => (
+              {programSmeshub.ecosystem.map((list, idx) => (
                 <li key={idx} className="text-gray-400 hover:text-white">
-                  <Link href={list.link}>{list.page}</Link>
+                   {list.name}
                 </li>
               ))}
             </ul>

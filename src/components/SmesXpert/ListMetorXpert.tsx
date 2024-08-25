@@ -75,7 +75,7 @@ const ListMetorXpert = () => {
               visibleItems < listMentor.mentor.length && (
                 <p
                   onClick={handleShowMore}
-                  className="mt-5 text-blue-500 cursor-pointer text-medium text-center px-4 py-2 rounded-md"
+                  className="mt-5 text-blue-500 cursor-pointer font-medium text-center px-4 py-2 rounded-md"
                 >
                   Lihat Mentor Selanjutnya
                 </p>
