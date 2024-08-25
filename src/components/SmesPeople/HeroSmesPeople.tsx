@@ -1,21 +1,21 @@
-import { heading } from "@/common/FontFamily";
-import { Mobile } from "@/common/MediaQuery";
-import { heroData } from "@/libs/HomeData";
-import image from "@/libs/ImageData";
-import Image from "next/image";
-import React from "react";
+import { heading } from '@/common/FontFamily';
+import { Mobile } from '@/common/MediaQuery'
+import { heroSmesPeopleData as heroData } from '@/libs/SmesPeopleData';
+import image from '@/libs/ImageData';
+import Image from 'next/image';
+import React from 'react'
 
-const HeroSection = () => {
-  const { isMobile } = Mobile();
+const HeroSmesPeople = () => {
+    const { isMobile } = Mobile();
   return (
     <div
       className={`${
         isMobile
           ? "px-5 flex-col-reverse mt-16"
-          : "xl:px-32 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 flex-col-reverse"
+          : "xl:px-32 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 mb-56 flex-col-reverse"
       } flex`}
     >
-      <div className="space-y-10 xl:max-w-2xl lg:max-w-lg w-auto mt-10 lg:mt-0">
+      <div className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">
         <div className="space-y-3">
           <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {heroData.subheading}
@@ -25,14 +25,14 @@ const HeroSection = () => {
           >
             {heroData.heading}
           </h1>
-          <p className=" text-sm text-gray-400 leading-relaxed xl:w-[70%]">
+          <p className=" text-sm text-gray-400 leading-relaxed">
             {heroData.body}
           </p>
         </div>
         {/* button cta */}
         <div className="flex flex-row items-center gap-3">
           <button className="bg-[#002774] border-[#002774] border py-3 font-medium px-6 rounded-full text-white text-sm">
-            Ajak Kolaborasi
+            Gabung Komunitas
           </button>
         </div>
         {/* Success client */}
@@ -44,11 +44,11 @@ const HeroSection = () => {
             </div>
         </div>
       </div>
-      <div className="xl:max-w-3xl max-w-auto">
-        <Image src={image.BgHomeHero} alt="bg-home-herosection" />
+      <div className="xl:max-w-2xl max-w-auto">
+        <Image src={image.BgSmesPeople} alt="bg-home-herosection" />
       </div>
     </div>
   );
-};
+}
 
-export default HeroSection;
+export default HeroSmesPeople

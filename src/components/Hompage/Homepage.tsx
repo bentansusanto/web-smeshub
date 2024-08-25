@@ -5,6 +5,7 @@ import PersentaseSection from './Section/PersentaseSection'
 import TestimoniSection from './Section/TestimoniSection'
 import EcosystemSection from './Section/EcosystemSection'
 import MediaLiputSection from './Section/MediaLiputSection'
+import ProgramSmeshub from '../SmesXperience/ProgramSmeshub'
 
 const Homepage = () => {
    return(
@@ -12,7 +13,8 @@ const Homepage = () => {
         <HeroSection/>
         <PersentaseSection/>
         <TestimoniSection/>
-        <EcosystemSection/>
+        <ProgramSmeshub/>
+        {/* <EcosystemSection/> */}
         <MediaLiputSection/>
     </>
    )

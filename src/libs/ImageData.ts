@@ -8,6 +8,7 @@ import PatternDots from '@/assets/pattern-dots.svg'
 import BgCta from '@/assets/bg-cta.jpg'
 import Arrow from '@/assets/arrow.svg'
 import BgVision from '@/assets/bg-vision.png'
+import BgSmesPeople from '@/assets/bg-smespeople.png'
 
 const image = {
     LogoSmeshub,
@@ -19,6 +20,7 @@ const image = {
     PatternDots,
     BgCta,
     Arrow,
-    BgVision
+    BgVision,
+    BgSmesPeople
 }
 export default image

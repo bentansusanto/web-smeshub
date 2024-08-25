@@ -1,7 +1,7 @@
 export const heroData = {
-  heading: "Tingkatkan kinerja perusahaan bersama kami 🚀",
-  subheading: "Mari tingkatkan kinerja perusahaan bersama kami",
-  body: "Learning Experience Platform untuk karyawan yang mengutamakan pembentukan kebiasaan belajar berkelanjutan",
+  heading: "Dukung terus UMKM dan anak muda Indonesia bersama Smeshub Indonesia",
+  subheading: "Buat Program UMKM dan anak muda bersama kami",
+  body: "Ciptakan lebih banyak pengusaha sukses di Indonesia melalui program edukasi, kurasi, inkubasi hingga transaksi",
   client_success: "3,2m",
 };
 
@@ -37,14 +37,14 @@ export const presentaseData = {
     },
     {
         title: "Liputan Media",
-        value: "250+"
+        value: "80+"
     },
   ]
 };
 
 export const testimoniData = {
-    heading: "Cerita Sukses Dari Anggota  SmesPeople Yang Mengikuti Program Smeshub",
-    subheading: "Testimoni Anggota SmesPeople",
+    heading: "Cerita SmesPeople yang sudah mengikuti program-program dari Smeshub",
+    subheading: "Apa kata SmesPeople?",
     testimoni: [
         {
             name: "Catherine",
@@ -100,7 +100,7 @@ export const ecosystemData = {
 }
 
 export const mediaLiputData = {
-    heading: "Diliput Lebih dari 50 Media Maintream Indonesia",
+    heading: "Diliput Lebih dari 80 Media Maintream Indonesia",
     mediaLiput: [
         "company1-color.png",
         "company2-color.png",

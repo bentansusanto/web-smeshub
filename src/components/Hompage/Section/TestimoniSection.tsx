@@ -22,7 +22,7 @@ const TestimoniSection = () => {
   return (
     <div
       className={`${
-        isMobile ? "px-5 mt-64" : "xl:px-32 lg:px-20 md:px-8 mt-72"
+        isMobile ? "px-5 mt-64" : "xl:px-32 lg:px-20 md:px-8 my-56"
       }`}
     >
       <div className="text-center mx-auto space-y-3 max-w-3xl">
