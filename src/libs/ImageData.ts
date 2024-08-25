@@ -9,6 +9,7 @@ import BgCta from '@/assets/bg-cta.jpg'
 import Arrow from '@/assets/arrow.svg'
 import BgVision from '@/assets/bg-vision.png'
 import BgSmesPeople from '@/assets/bg-smespeople.png'
+import BgKolaborasiPage from '@/assets/bg-kolaborasi.png'
 
 const image = {
     LogoSmeshub,
@@ -21,6 +22,7 @@ const image = {
     BgCta,
     Arrow,
     BgVision,
-    BgSmesPeople
+    BgSmesPeople,
+    BgKolaborasiPage
 }
 export default image
