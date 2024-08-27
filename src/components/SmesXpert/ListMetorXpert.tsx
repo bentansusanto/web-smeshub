@@ -1,13 +1,29 @@
+import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { listMentor } from "@/libs/SmesXpertData";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ListMetorXpert = () => {
   const { isMobile } = Mobile();
   const [visibleItems, setVisibleItems] = useState(4); // Mulai dengan 4 item
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [data, setData] = useState<any>([])
+
+  useEffect(() => {
+    const getDataMentor = async() =>{
+      try {
+        const res = await fetchData(`${baseUrlApi}/mentor-smeshubs?populate=foto_mentor`)
+        const datas = res.map((list: any) => list.attributes)
+        console.log(datas)
+        setData(datas)
+      } catch (error) {
+        throw new Error(`${error}`)
+      }
+    }
+    getDataMentor()
+  },[])
 
   const handleShowMore = () => {
     setLoading(true);
@@ -17,7 +33,7 @@ const ListMetorXpert = () => {
     }, 1500); // Simulasi loading selama 1 detik
   };
 
-  const currentItems = listMentor.mentor.slice(0, visibleItems);
+  const currentItems = data.slice(0, visibleItems);
 
   return (
     <div
@@ -47,14 +63,14 @@ const ListMetorXpert = () => {
       <div>
       <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 md:mt-20 mt-12 gap-x-5 gap-y-10">
         {
-            currentItems.map((list, idx) => (
+            currentItems.map((list:any, idx:any) => (
                 <div key={idx} className="space-y-3">
-                    <div>
-                        <Image src={require(`@/assets/${list.picture}`)} alt="foto-mentor"/>
+                    <div className="space-y-3 overflow-hidden ">
+                        <Image src={`${baseUrl}${list.foto_mentor.data.attributes.url}`} width={0} height={0} className="w-auto object-cover object-center" alt="foto-mentor"/>
                     </div>
                     <div className="space-y-2">
-                        <p className="text-font-semibold">{list.name}</p>
-                        <p className="text-font text-gray-400 text-sm">{list.posisi}</p>
+                        <p className="text-font-semibold capitalize">{list.name_mentor}</p>
+                        <p className="text-font text-gray-500 text-sm">{list.title}</p>
                     </div>
                 </div>
             ))

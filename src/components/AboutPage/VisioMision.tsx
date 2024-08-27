@@ -7,7 +7,7 @@ import ContentVisionMision from './ContentVisionMision'
 const VisioMision = () => {
     const {isMobile} = Mobile()
   return (
-    <div className={`${isMobile? "px-5 mt-56" : "xl:px-32 lg:px-20 md:px-8 mt-40"}`}>
+    <div className={`${isMobile? "px-5 mt-80" : "xl:px-32 lg:px-20 md:px-8 mt-40"}`}>
         <div className='space-y-3 text-center max-w-4xl mx-auto'>
         <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {visionMission.subheading}

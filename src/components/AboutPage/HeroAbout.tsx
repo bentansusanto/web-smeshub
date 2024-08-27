@@ -1,12 +1,24 @@
+import { baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
-import { heroAboutData } from "@/libs/AboutData";
 import image from "@/libs/ImageData";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HeroAbout = () => {
   const { isMobile } = Mobile();
+  const [data, setData] = useState<any>({})
+  useEffect(() => {
+    const getDataHeroAbout = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/section1-aboutpage`)
+        setData(res.attributes)
+      } catch (error) {
+        throw new Error(`Error data ${error}`)
+      }
+    }
+    getDataHeroAbout()
+  },[])
   return (
     <div
       className={`${
@@ -16,15 +28,15 @@ const HeroAbout = () => {
       <div className="space-y-10">
         <div className="space-y-3">
           <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
-            {heroAboutData.subheading}
+            {data.subheading}
           </p>
           <h1
             className={`${heading.className} font-bold xl:text-[52px] lg:text-[42px] text-4xl leading-snug`}
           >
-            {heroAboutData.heading}
+            {data.heading}
           </h1>
           <p className=" text-sm text-gray-400 leading-relaxed">
-            {heroAboutData.body}
+            {data.body}
           </p>
         </div>
         <div className={` ${isMobile&& "pt-0"} relative pt-10`}>
