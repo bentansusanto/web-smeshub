@@ -1,12 +1,29 @@
+import { baseUrl, baseUrlApi, fetchData } from '@/common/FetchData';
 import { heading } from '@/common/FontFamily';
 import { Mobile } from '@/common/MediaQuery';
 import { companyPartner } from '@/libs/KolaborasiData';
 import Image from 'next/image';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs';
 
 const CompanyPartner = () => {
     const { isMobile } = Mobile();
+    const [data, setData] = useState<any>({})
+    const [images, setImages] = useState<any>({})
+    const [icon, setIcon] = useState<any>({})
+    useEffect(() => {
+      const getDataCompanyPartner = async() => {
+          try {
+            const res = await fetchData(`${baseUrlApi}/join-as-company?populate=bg_join_company&populate=icon_company`)
+            setData(res.attributes)
+            setImages(res.attributes.bg_join_company.data.attributes)
+            setIcon(res.attributes.icon_company.data.attributes)
+          } catch (error) {
+            throw new Error(`${error}`)
+          }
+      }
+      getDataCompanyPartner()
+    },[])
     return (
       <div
         className={`${
@@ -16,28 +33,34 @@ const CompanyPartner = () => {
         } flex`}
       >
         <div className="xl:max-w-3xl lg:max-w-xl">
-          <Image
-            src={require(`@/assets/${companyPartner.bg_company}`)}
-            alt="bg-kompetisi-bisnis"
-          />
+        <Image
+          src={`${baseUrl}${images.url}`}
+          width={0}
+          height={0}
+          className='w-auto'
+          alt="bg-pendampingan-umkm"
+        />
         </div>
         <div className="space-y-5 max-w-xl">
           <div>
-            <Image
-              src={require(`@/assets/${companyPartner.icon}`)}
-              alt="icon-kompetisi-bisnis"
-            />
+          <Image
+          src={`${baseUrl}${icon.url}`}
+          width={0}
+          height={0}
+          className='w-auto'
+          alt="bg-pendampingan-umkm"
+        />
           </div>
           <div className="space-y-3">
             <h2
               className={`${heading.className} font-semibold leading-snug text-3xl`}
             >
-              {companyPartner.heading}
+              {data.heading}
             </h2>
-            <p className="text-gray-400">{companyPartner.body}</p>
+            <p className="text-gray-400">{data.body}</p>
           </div>
           <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
-            <p>Pelajari Lebih Lanjut</p>
+            <p>Daftar Sekarang</p>
             <BsArrowRight className="text-xl"/>
           </button>
         </div>

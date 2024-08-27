@@ -1,12 +1,29 @@
+import { baseUrl, baseUrlApi, fetchData } from '@/common/FetchData'
 import { heading } from '@/common/FontFamily'
 import { Mobile } from '@/common/MediaQuery'
 import { fasilitatorData } from '@/libs/SmesPeopleData'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 
 const FasilitatorSection = () => {
     const {isMobile} = Mobile()
+    const [data, setData] = useState<any>({})
+    const [images, setImages] = useState<any>({})
+    const [icon, setIcon] = useState<any>({})
+    useEffect(() => {
+      const getDataFasilitatorSection = async() => {
+          try {
+            const res = await fetchData(`${baseUrlApi}/section-fasilitator-smes-people?populate=bg_fasilitator_smespeople&populate=icon_fasilitator`)
+            setData(res.attributes)
+            setImages(res.attributes.bg_fasilitator_smespeople.data.attributes)
+            setIcon(res.attributes.icon_fasilitator.data.attributes)
+          } catch (error) {
+            throw new Error(`${error}`)
+          }
+      }
+      getDataFasilitatorSection()
+    },[])
   return (
     <div className={`${
         isMobile
@@ -16,7 +33,10 @@ const FasilitatorSection = () => {
       <div className="space-y-5 max-w-xl">
         <div>
           <Image
-            src={require(`@/assets/${fasilitatorData.icon}`)}
+            src={`${baseUrl}${icon.url}`}
+            width={0}
+            height={0}
+            className='w-auto'
             alt="icon-pendampingan-umkm"
           />
         </div>
@@ -24,9 +44,9 @@ const FasilitatorSection = () => {
           <h2
             className={`${heading.className} font-semibold leading-snug text-3xl`}
           >
-            {fasilitatorData.heading}
+            {data.heading}
           </h2>
-          <p className="text-gray-400">{fasilitatorData.body}</p>
+          <p className="text-gray-400">{data.body}</p>
         </div>
         <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
           <p>Gabung Sekarang</p>
@@ -35,7 +55,10 @@ const FasilitatorSection = () => {
       </div>
       <div className="xl:max-w-3xl lg:max-w-xl">
         <Image
-          src={require(`@/assets/${fasilitatorData.bg_fasilitator}`)}
+          src={`${baseUrl}${images.url}`}
+          width={0}
+          height={0}
+          className='w-auto'
           alt="bg-pendampingan-umkm"
         />
       </div>

@@ -1,12 +1,27 @@
 import { Mobile } from '@/common/MediaQuery';
 import image from '@/libs/ImageData';
 import Image from 'next/image';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { heroKolaboarasiData as heroData } from '@/libs/KolaborasiData';
 import { heading } from '@/common/FontFamily';
+import { baseUrl, baseUrlApi, fetchData } from '@/common/FetchData';
 
 const HeroKolaborasi = () => {
     const { isMobile } = Mobile();
+    const [data, setData] = useState<any>({})
+    const [images, setImages] = useState<any>({})
+    useEffect(() => {
+      const getDataHeroKolaborasi = async() => {
+        try {
+          const res = await fetchData(`${baseUrlApi}/section1-kolaborasi?populate=bg_section1_kolaborasi`)
+          setData(res.attributes)
+          setImages(res.attributes.bg_section1_kolaborasi.data.attributes)
+        } catch (error) {
+          throw new Error(`${error}`)
+        }
+      }
+      getDataHeroKolaborasi()
+    },[])
     return (
       <div
         className={`${
@@ -18,15 +33,15 @@ const HeroKolaborasi = () => {
         <div className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">
           <div className="space-y-3">
             <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
-              {heroData.subheading}
+              {data.subheading}
             </p>
             <h1
               className={`${heading.className} font-bold xl:text-[52px] lg:text-[42px] text-3xl leading-snug`}
             >
-              {heroData.heading}
+              {data.heading}
             </h1>
             <p className=" text-sm text-gray-400 leading-relaxed">
-              {heroData.body}
+              {data.body}
             </p>
           </div>
           {/* button cta */}
@@ -37,7 +52,7 @@ const HeroKolaborasi = () => {
           </div>
         </div>
         <div className="xl:max-w-2xl max-w-auto">
-          <Image src={image.BgKolaborasiPage} alt="bg-home-herosection" />
+        <Image src={`${baseUrl}${images.url}`} width={0} height={0} className='w-auto' alt="bg-herosection" />
         </div>
       </div>
     );

@@ -9,19 +9,30 @@ const ListMetorXpert = () => {
   const { isMobile } = Mobile();
   const [visibleItems, setVisibleItems] = useState(4); // Mulai dengan 4 item
   const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<any>([])
+  const [data, setData] = useState<any>({})
+  const [dataMentor, setDataMentor] = useState<any>([])
+
+  const getHeadingMentor = async() => {
+    try {
+      const res = await fetchData(`${baseUrlApi}/section1-smes-epert`)
+      setData(res.attributes)
+    } catch (error) {
+      throw new Error(`${error}`)
+    }
+  }
+
+  const getDataMentor = async() =>{
+    try {
+      const res = await fetchData(`${baseUrlApi}/mentor-smeshubs?populate=foto_mentor`)
+      const datas = res.map((list: any) => list.attributes)
+      setDataMentor(datas)
+    } catch (error) {
+      throw new Error(`${error}`)
+    }
+  }
 
   useEffect(() => {
-    const getDataMentor = async() =>{
-      try {
-        const res = await fetchData(`${baseUrlApi}/mentor-smeshubs?populate=foto_mentor`)
-        const datas = res.map((list: any) => list.attributes)
-        console.log(datas)
-        setData(datas)
-      } catch (error) {
-        throw new Error(`${error}`)
-      }
-    }
+    getHeadingMentor()
     getDataMentor()
   },[])
 
@@ -33,7 +44,7 @@ const ListMetorXpert = () => {
     }, 1500); // Simulasi loading selama 1 detik
   };
 
-  const currentItems = data.slice(0, visibleItems);
+  const currentItems = dataMentor.slice(0, visibleItems);
 
   return (
     <div
@@ -46,15 +57,15 @@ const ListMetorXpert = () => {
         <div className="space-y-10">
           <div className="space-y-3">
             <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
-              {listMentor.subheading}
+              {data.subheading}
             </p>
             <h1
               className={`${heading.className} font-bold xl:text-[42px] lg:text-[36px] text-3xl leading-snug`}
             >
-              {listMentor.heading}
+              {data.heading}
             </h1>
             <p className=" text-sm text-gray-400 leading-relaxed">
-              {listMentor.body}
+              {data.body}
             </p>
           </div>
         </div>
@@ -88,7 +99,7 @@ const ListMetorXpert = () => {
                     </span>
                 </div>
             ) : (
-              visibleItems < listMentor.mentor.length && (
+              visibleItems < dataMentor.length && (
                 <p
                   onClick={handleShowMore}
                   className="mt-5 text-blue-500 cursor-pointer font-medium text-center px-4 py-2 rounded-md"
