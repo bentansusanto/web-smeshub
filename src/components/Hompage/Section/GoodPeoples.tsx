@@ -1,3 +1,4 @@
+import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { testimoniData } from "@/libs/HomeData";
@@ -5,14 +6,28 @@ import image from "@/libs/ImageData";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const TestimoniSection = () => {
+const GoodPeoples = () => {
   const { isMobile } = Mobile();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [data, setData] = useState<any>([])
+  
+  useEffect(() => {
+    const dataGoodPeople = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/kutipan-orang-pentings?populate=picture`)
+        const datas = res.map((list:any) => list.attributes)
+        setData(datas)
+      } catch (error) {
+        throw new Error(`Error data ${error}`)
+      }
+    }
+    dataGoodPeople()
+  },[])
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === testimoniData.testimoni.length - 1 ? 0 : prevIndex + 1
+        prevIndex === data.length - 1 ? 0 : prevIndex + 1
       );
     }, 3000); // Change slide every 5 seconds
 
@@ -22,7 +37,7 @@ const TestimoniSection = () => {
   return (
     <div
       className={`${
-        isMobile ? "px-5 mt-64" : "xl:px-32 lg:px-20 md:px-8 my-56"
+        isMobile ? "px-5 mt-96" : "xl:px-32 lg:px-20 md:px-8 my-56"
       }`}
     >
       <div className="text-center mx-auto space-y-3 max-w-3xl">
@@ -45,7 +60,7 @@ const TestimoniSection = () => {
                   <h2
                     className={`${heading.className} font-semibold lg:text-[36px] text-[28px]`}
                   >
-                    {testimoniData.testimoni[currentIndex].message}
+                    {data[currentIndex]?.message}
                   </h2>
                 </div>
                 <Image
@@ -64,14 +79,14 @@ const TestimoniSection = () => {
               <div className="flex justify-between items-center">
                 <div className="space-y-2">
                   <p className="text-white font-semibold">
-                    {testimoniData.testimoni[currentIndex].name}
+                    {data[currentIndex]?.name}
                   </p>
                   <p className="text-gray-400">
-                    {testimoniData.testimoni[currentIndex].job}
+                    {data.title}
                   </p>
                 </div>
                 <div className="flex justify-center mt-4 space-x-2">
-              {testimoniData.testimoni.map((_, index) => (
+              {data.map((_:any, index:any) => (
                 <div
                   key={index}
                   className={`w-2 h-2 rounded-full ${
@@ -85,11 +100,15 @@ const TestimoniSection = () => {
             </div>
           </div>
           <div className={` ${isMobile? "w-full -top-20" : "lg:w-auto w-full"} absolute lg:top-0 md:-top-20 xl:-left-20 lg:-left-28 left-0`}>
-            <Image
-              src={require(`@/assets/${testimoniData.testimoni[currentIndex].image}`)}
-              alt="image-testimoni"
-              className="w-44 rounded-xl mx-auto"
-            />
+            <div className="overflow-hidden w-44 mx-auto">
+              <Image
+                src={`${baseUrl}${data[currentIndex]?.picture.data.attributes.url}`}
+                width={0}
+                height={0}
+                alt="image-testimoni"
+                className=" w-full rounded-xl mx-auto object-center object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -97,4 +116,4 @@ const TestimoniSection = () => {
   );
 };
 
-export default TestimoniSection;
+export default GoodPeoples;

@@ -1,13 +1,29 @@
+import { baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { programSmeshub } from "@/libs/SmesExperienceData";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const ProgramSmeshub = () => {
   const { isMobile } = Mobile();
   const [visibleItems, setVisibleItems] = useState(4); // Mulai dengan 4 item
   const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<any>([]);
+
+  useEffect(() => {
+    const dataProgramSmeshub = async () => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/programsmeshubs`);
+        const datas = res.map((list: any) => list.attributes);
+        console.log(datas);
+        setData(datas);
+      } catch (error) {
+        throw new Error(`Error data ${error}`);
+      }
+    };
+    dataProgramSmeshub();
+  }, []);
 
   const handleShowMore = () => {
     setLoading(true);
@@ -17,7 +33,7 @@ const ProgramSmeshub = () => {
     }, 1500); // Simulasi loading selama 1 detik
   };
 
-  const currentItems = programSmeshub.ecosystem.slice(0, visibleItems);
+  const currentItems = data.slice(0, visibleItems);
 
   return (
     <div className={`${isMobile ? "px-5" : "xl:px-32 lg:px-20 md:px-8"} mt-40`}>
@@ -35,34 +51,32 @@ const ProgramSmeshub = () => {
         {isMobile ? (
           <>
             <div className="grid grid-cols-2 gap-5">
-              {currentItems.map((list, idx) => (
+              {currentItems.map((list: any, idx: any) => (
                 <div
                   key={idx}
                   className="bg-gradient-to-tl from-gray-100 to-gray-50 p-5 rounded-md"
                 >
                   <div className="">
-                    <h3 className="text-xl font-semibold">{list.name}</h3>
+                    <h3 className="text-xl font-semibold">
+                      {list.name_program}
+                    </h3>
                   </div>
                   <div className="bg-gray-300 h-[1px] w-full my-3" />
-                  <p className="text-gray-400">{list.desc}</p>
-                  <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
-                    <p className="text-[14px]">Pelajari Lebih Lanjut</p>
-                    <BsArrowRight className="text-lg" />
-                  </button>
+                  <p className="text-gray-400">{list.description}</p>
                 </div>
               ))}
             </div>
             {loading ? (
-                <div className="text-center mt-8">
-                    <span
-                    className="animate-spin inline-block size-4 border-[3px] 
+              <div className="text-center mt-8">
+                <span
+                  className="animate-spin inline-block size-4 border-[3px] 
                     border-current border-t-transparent text-center text-blue-500 rounded-full"
-                    role="status"
-                    aria-label="loading"
-                    >
-                    <span className="sr-only">Loading...</span>
-                    </span>
-                </div>
+                  role="status"
+                  aria-label="loading"
+                >
+                  <span className="sr-only">Loading...</span>
+                </span>
+              </div>
             ) : (
               visibleItems < programSmeshub.ecosystem.length && (
                 <p
@@ -76,20 +90,16 @@ const ProgramSmeshub = () => {
           </>
         ) : (
           <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5">
-            {programSmeshub.ecosystem.map((list, idx) => (
+            {data.map((list: any, idx: any) => (
               <div
                 key={idx}
                 className="bg-gradient-to-tl from-gray-100 to-gray-50 p-5 rounded-md"
               >
                 <div className="">
-                  <h3 className="text-xl font-semibold">{list.name}</h3>
+                  <h3 className="text-xl font-semibold">{list.name_program}</h3>
                 </div>
                 <div className="bg-gray-300 h-[1px] w-full my-3" />
-                <p className="text-gray-400">{list.desc}</p>
-                <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
-                  <p className="text-sm font-semibold">Pelajari Lebih Lanjut</p>
-                  <BsArrowRight className="text-sm" />
-                </button>
+                <p className="text-gray-400">{list.description}</p>
               </div>
             ))}
           </div>
