@@ -82,7 +82,7 @@ const GoodPeoples = () => {
                     {data[currentIndex]?.name}
                   </p>
                   <p className="text-gray-400">
-                    {data.title}
+                    {data[currentIndex]?.title}
                   </p>
                 </div>
                 <div className="flex justify-center mt-4 space-x-2">
@@ -99,14 +99,14 @@ const GoodPeoples = () => {
               </div>
             </div>
           </div>
-          <div className={` ${isMobile? "w-full -top-20" : "lg:w-auto w-full"} absolute lg:top-0 md:-top-20 xl:-left-20 lg:-left-28 left-0`}>
-            <div className="overflow-hidden w-44 mx-auto">
+          <div className={` ${isMobile? "w-full -top-24" : "lg:w-auto w-full"} absolute lg:top-0 md:-top-20 xl:-left-20 lg:-left-28 left-0`}>
+            <div className="overflow-hidden w-52 h-52 mx-auto">
               <Image
                 src={`${baseUrl}${data[currentIndex]?.picture.data.attributes.url}`}
                 width={0}
                 height={0}
                 alt="image-testimoni"
-                className=" w-full rounded-xl mx-auto object-center object-cover"
+                className=" w-full h-full rounded-xl mx-auto object-top object-cover"
               />
             </div>
           </div>

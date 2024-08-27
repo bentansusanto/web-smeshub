@@ -43,8 +43,8 @@ export const presentaseData = {
 };
 
 export const testimoniData = {
-    heading: "Cerita SmesPeople yang sudah mengikuti program-program dari Smeshub",
-    subheading: "Apa kata SmesPeople?",
+    heading: "Kata Orang Penting Untuk Kemajuan Smeshub",
+    subheading: "Apa kata orang penting untuk kemajuan smeshub?",
     testimoni: [
         {
             name: "Catherine",
