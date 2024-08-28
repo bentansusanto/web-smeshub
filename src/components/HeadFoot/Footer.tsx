@@ -19,8 +19,8 @@ const Footer = () => {
       <div
         className={`${
           isMobile
-            ? "flex-col mt-5 px-5 pb-10"
-            : "mt-20 xl:px-32 lg:px-20 px-8 pb-10 flex-row justify-between gap-10"
+            ? "flex-col mt-5 px-5 pt-10"
+            : "mt-20 xl:px-32 lg:px-20 px-8 pt-10 flex-row justify-between gap-10"
         } flex`}
       >
         <div className="space-y-5">

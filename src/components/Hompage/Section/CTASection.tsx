@@ -1,10 +1,16 @@
 import { heading } from "@/common/FontFamily";
 import image from "@/libs/ImageData";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
-import { TbWorld } from "react-icons/tb";
 
 const CTASection = () => {
+  const pathname = usePathname();
+
+  // Kondisi untuk menyembunyikan CTA pada halaman artikel dan detail artikel
+  if (pathname === '/berita' || pathname.startsWith('/berita/')) {
+    return null;
+  }
   return (
     <div className="lg:max-w-4xl md:max-w-3xl rounded-3xl bg-[#002774] w-full mx-auto md:p-10 p-8 -top-24 relative ">
       <div className="flex md:flex-row flex-col-reverse items-start justify-between ">

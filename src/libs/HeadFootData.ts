@@ -21,7 +21,7 @@ export const navData = [
     },
     {
         page: "Berita",
-        link: "/news"
+        link: "/berita"
     },
 ]
 
