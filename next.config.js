@@ -8,7 +8,11 @@ const nextConfig = {
             {
                 protocol: "https",
                 hostname: "admin.smeshub.co.id"
-            }
+            },
+            {
+                protocol: "http",
+                hostname: "localhost:1337"
+            },
         ]
     }
 }

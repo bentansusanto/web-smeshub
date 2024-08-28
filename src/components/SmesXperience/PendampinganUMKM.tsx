@@ -1,12 +1,29 @@
+import { baseUrl, baseUrlApi, fetchData } from '@/common/FetchData'
 import { heading } from '@/common/FontFamily'
 import { Mobile } from '@/common/MediaQuery'
 import { pendampinganUMKM } from '@/libs/SmesExperienceData'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 
 const PendampinganUMKM = () => {
     const {isMobile} = Mobile()
+    const [data, setData] = useState<any>({})
+  const [images, setImages] = useState<any>({})
+  const [icon, setIcon] = useState<any>({})
+  useEffect(() => {
+    const getDataPendampinganUMKM = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/pendampingan-umkm?populate=bg_pendampingan_umkm&populate=icon_pendampingan_umkm`)
+        setData(res.attributes)
+        setImages(res.attributes.bg_pendampingan_umkm.data.attributes)
+        setIcon(res.attributes.icon_pendampingan_umkm.data.attributes)
+      } catch (error) {
+        throw new Error(`${error}`)
+      }
+    }
+    getDataPendampinganUMKM()
+  },[]) 
   return (
     <div className={`${
         isMobile
@@ -15,10 +32,13 @@ const PendampinganUMKM = () => {
       } flex`}>
       <div className="space-y-5 max-w-xl">
         <div>
-          <Image
-            src={require(`@/assets/${pendampinganUMKM.icon}`)}
-            alt="icon-pendampingan-umkm"
-          />
+        <Image
+          src={`${baseUrl}${icon.url}`}
+          width={0}
+          height={0}
+          className='w-auto'
+          alt="bg-pendampingan-umkm"
+        />
         </div>
         <div className="space-y-3">
           <h2
@@ -34,8 +54,11 @@ const PendampinganUMKM = () => {
         </button>
       </div>
       <div className="xl:max-w-3xl lg:max-w-xl">
-        <Image
-          src={require(`@/assets/${pendampinganUMKM.bg_pendampingan_umkm}`)}
+      <Image
+          src={`${baseUrl}${images.url}`}
+          width={0}
+          height={0}
+          className='w-auto'
           alt="bg-pendampingan-umkm"
         />
       </div>
