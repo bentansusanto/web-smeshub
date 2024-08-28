@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "admin.smeshub.co.id",
-      },
-    ],
-  },
-  output: 'export'
-};
+    output: "export",
+    trailingSlash: true,
+    images: {
+        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "admin.smeshub.co.id"
+            }
+        ]
+    }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

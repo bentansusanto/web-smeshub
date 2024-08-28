@@ -18,11 +18,7 @@ export const navData = [
     {
         page: "Kolaborasi",
         link: "/kolaborasi"
-    },
-    {
-        page: "Berita",
-        link: "/berita"
-    },
+    }
 ]
 
 export const contactCompany = {
