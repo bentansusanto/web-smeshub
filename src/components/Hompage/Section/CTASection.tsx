@@ -1,16 +1,23 @@
 import { heading } from "@/common/FontFamily";
 import image from "@/libs/ImageData";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
+// import { usePathname } from "next/navigation";
 import React from "react";
 
-const CTASection = () => {
-  const pathname = usePathname();
 
+const CTASection = () => {
+  // const pathname = usePathname();
+  
+  
   // Kondisi untuk menyembunyikan CTA pada halaman artikel dan detail artikel
-  if (pathname === '/berita' || pathname.startsWith('/berita/')) {
-    return null;
-  }
+  // if (pathname === '/berita' || pathname.startsWith('/berita/')) {
+  //   return null;
+  // }
+  
+  
+  
+
   return (
     <div className="lg:max-w-4xl md:max-w-3xl rounded-3xl bg-[#002774] w-full mx-auto md:p-10 p-8 -top-24 relative ">
       <div className="flex md:flex-row flex-col-reverse items-start justify-between ">
@@ -29,7 +36,9 @@ const CTASection = () => {
           </div>
           <div className="flex flex-row items-center gap-3">
             <button className="bg-[#FF961A] border-[#FF961A] border py-3 px-6 rounded-full text-black font-medium text-sm">
-              Gabung Sekarang
+              <Link href={'#'} target="_blank">
+                Gabung Sekarang
+              </Link>
             </button>
           </div>
         </div>

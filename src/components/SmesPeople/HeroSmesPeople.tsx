@@ -5,6 +5,7 @@ import image from '@/libs/ImageData';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import { baseUrl, baseUrlApi, fetchData } from '@/common/FetchData';
+import Link from 'next/link';
 
 const HeroSmesPeople = () => {
     const { isMobile } = Mobile();
@@ -47,7 +48,9 @@ const HeroSmesPeople = () => {
         {/* button cta */}
         <div className="flex flex-row items-center gap-3">
           <button className="bg-[#002774] border-[#002774] border py-3 font-medium px-6 rounded-full text-white text-sm">
-            Gabung Komunitas
+            <Link href={'https://t.me/komunitasumkmsmeshub'}>
+              Gabung Komunitas
+            </Link>
           </button>
         </div>
         {/* Success client */}
