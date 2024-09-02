@@ -32,7 +32,7 @@ const GoodPeoples = () => {
     }, 3000); // Change slide every 5 seconds
 
     return () => clearInterval(interval); // Clean up the interval on unmount
-  }, [currentIndex]);
+  }, [currentIndex, data]);
 
   return (
     <div
