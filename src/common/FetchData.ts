@@ -106,3 +106,7 @@ export const fetchDataCtaSmesPeople = () => {
   }, []);
   return { dataSmesPeople, imagesSmesPeople };
 };
+
+export const fetchDataHeroAbout = () => {
+  
+}

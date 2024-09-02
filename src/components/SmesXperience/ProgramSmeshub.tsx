@@ -3,7 +3,7 @@ import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { programSmeshub } from "@/libs/SmesExperienceData";
 import React, { useEffect, useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { IoCheckmarkDone } from "react-icons/io5";
 
 const ProgramSmeshub = () => {
   const { isMobile } = Mobile();
@@ -46,7 +46,57 @@ const ProgramSmeshub = () => {
           {programSmeshub.heading}
         </h1>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 flex flex-col gap-5 ">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+            {data.slice(0, 3).map((list: any, idx: any) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] shadow-gray-200 p-5 rounded-md"
+              >
+                <div className="">
+                  <h3 className="text-xl font-semibold">{list.name_program}</h3>
+                </div>
+                <div className="bg-gray-300 h-[1px] w-full my-4" />
+                <div className="space-y-4">
+                  {
+                    list.detail_program.map((data:any, idx:any) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <IoCheckmarkDone className="text-xl text-blue-500"/>
+                        <p className="text-gray-500 font-medium">{data.detail}</p>
+
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            ))}
+          </div>
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
+            {data.slice(3, data.length).map((list: any, idx: any) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-tl from-gray-100 to-gray-50 p-5 rounded-md"
+              >
+                <div className="">
+                  <h3 className="text-xl font-semibold">{list.name_program}</h3>
+                </div>
+                <div className="bg-gray-300 h-[1px] w-full my-3" />
+                <div className="space-y-4">
+                  {
+                    list.detail_program.map((data:any, idx:any) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <IoCheckmarkDone className="text-xl text-blue-500"/>
+                        <p className="text-gray-500 font-medium">{data.detail}</p>
+
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            ))}
+          </div>
+      </div>
+      {/* <div className="mt-10">
         {isMobile ? (
           <>
             <div className="grid grid-cols-2 gap-5">
@@ -103,7 +153,7 @@ const ProgramSmeshub = () => {
             ))}
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

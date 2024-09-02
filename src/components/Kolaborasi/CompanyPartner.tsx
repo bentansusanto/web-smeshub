@@ -60,7 +60,7 @@ const CompanyPartner = () => {
             <p className="text-gray-400">{data.body}</p>
           </div>
           <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
-            <p>Daftar Sekarang</p>
+            <p>Join Sekarang</p>
             <BsArrowRight className="text-xl"/>
           </button>
         </div>

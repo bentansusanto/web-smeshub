@@ -39,7 +39,7 @@ const HeroAbout = () => {
             {data.body}
           </p>
         </div>
-        <div className={` ${isMobile&& "pt-0"} relative pt-10`}>
+        <div className={` ${isMobile&& "pt-0"} relative pt-5`}>
           <div className="flex items-center space-x-5 text justify-center">
             <button className="bg-[#002774] border-[#002774] border py-3 font-medium px-6 rounded-full text-white text-sm">
               Gabung Sekarang
@@ -48,7 +48,7 @@ const HeroAbout = () => {
               Pelajari Lebih Lanjut
             </button>
           </div>
-          <div className={`${isMobile&&"hidden"} absolute top-0 left-10`}>
+          <div className={`${isMobile&&"hidden"} absolute -top-5 left-10`}>
             <Image src={image.Arrow} alt="arrow"/>
           </div>
         </div>

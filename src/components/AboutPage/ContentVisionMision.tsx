@@ -1,5 +1,6 @@
 import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
+import { visionMission } from "@/libs/AboutData";
 import image from "@/libs/ImageData";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -39,31 +40,21 @@ const ContentVisionMision = () => {
   },[])
 
   return (
-    <div className="mt-40 pb-10 bg-[#001236] w-screen">
-      <div className="max-w-4xl -top-20 px-5 mx-auto relative">
-        <div className="relative">
-          <Image
-            src={image.BgVideoPersentase}
-            alt="bg-video-persentase"
-            className="rounded-3xl"
-          />
-          <div className="bg-blue-800 opacity-50 absolute inset-0 w-full h-full rounded-3xl" />
-        </div>
-        <div className="absolute inset-0 flex justify-center items-center">
-          <div className="relative">
-            <div className=" animate-ping duration-600 rounded-full bg-[#ffffff70] p-10" />
-            <FaPlay className="text-2xl text-white absolute inset-0 mx-auto my-auto" />
-          </div>
-        </div>
-      </div>
-      <div className=" text-white xl:px-56 lg:px-20 px-5 mt-10">
-        <div>
+    <div className="pb-10 pt-40 bg-[#001236] w-screen">
+      <div className='space-y-3 text-center max-w-4xl text-white mx-auto'>
+        <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
+            {visionMission.subheading}
+          </p>
           <h1
-            className={`${heading.className} font-semibold lg:text-4xl text-2xl text-center`}
+            className={`${heading.className} font-bold xl:text-[36px] lg:text-[42px] text-2xl leading-snug`}
           >
-            Continuation of Vision, Mission and Values
+            {visionMission.heading}
           </h1>
+          <p className=" text-sm text-gray-400 leading-relaxed">
+            {visionMission.body}
+          </p>
         </div>
+      <div className=" text-white xl:px-56 lg:px-20 px-5 mt-10">
         {/* Vision & Mission */}
         <div className="flex lg:flex-row flex-col-reverse gap-5 items-center justify-between lg:mt-40 mt-20">
           <div className="space-y-5 max-w-lg lg:mt-0 mt-10">

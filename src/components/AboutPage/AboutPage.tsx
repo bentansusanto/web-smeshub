@@ -11,7 +11,7 @@ const AboutPage = () => {
     <div>
         <HeroAbout/>
         <PersentaseSection/>
-        <VisioMision/>
+        {/* <VisioMision/> */}
         <ContentVisionMision/>
         <Location/>
     </div>
