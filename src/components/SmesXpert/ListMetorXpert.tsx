@@ -56,9 +56,9 @@ const ListMetorXpert = () => {
       <div className="text-center mx-auto max-w-2xl">
         <div className="space-y-10">
           <div className="space-y-3">
-            <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
+            {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
               {data.subheading}
-            </p>
+            </p> */}
             <h1
               className={`${heading.className} font-bold xl:text-[42px] lg:text-[36px] text-3xl leading-snug`}
             >
@@ -76,12 +76,12 @@ const ListMetorXpert = () => {
         {
             currentItems.map((list:any, idx:any) => (
                 <div key={idx} className="space-y-3">
-                    <div className="space-y-3 overflow-hidden ">
+                    <div className="space-y-3 mx-auto overflow-hidden rounded-full w-72 h-72 bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                         <Image src={`${baseUrl}${list.foto_mentor.data.attributes.url}`} width={0} height={0} className="w-auto object-cover object-center" alt="foto-mentor"/>
                     </div>
                     <div className="space-y-2">
-                        <p className="text-font-semibold capitalize">{list.name_mentor}</p>
-                        <p className="text-font text-gray-500 text-sm">{list.title}</p>
+                        <p className="font-semibold capitalize text-[18px] text-center">{list.name_mentor}</p>
+                        <p className=" text-gray-500 text-center">{list.title}</p>
                     </div>
                 </div>
             ))
