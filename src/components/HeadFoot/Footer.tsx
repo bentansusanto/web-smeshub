@@ -4,7 +4,7 @@ import CTASection from "../Hompage/Section/CTASection";
 import Image from "next/image";
 import image from "@/libs/ImageData";
 import { PiTiktokLogo } from "react-icons/pi";
-import { contactCompany, navData } from "@/libs/HeadFootData";
+import { contactCompany, footerData, navData } from "@/libs/HeadFootData";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { FiLinkedin, FiYoutube } from "react-icons/fi";
@@ -14,12 +14,12 @@ const Footer = () => {
   const { isMobile } = Mobile();
   const date = new Date().getFullYear()
   return (
-    <div className="bg-[#001236] w-screen h-full relative md:pb-10 pb-5">
+    <div className="bg-[#001236] w-screen h-full relative md:py-10 pb-5">
       <CTASection />
       <div
         className={`${
           isMobile
-            ? "flex-col mt-5 px-5"
+            ? "flex-col px-5 py-10"
             : "mt-10 xl:px-32 lg:px-20 px-8 flex-row justify-between gap-10"
         } flex`}
       >
@@ -58,7 +58,7 @@ const Footer = () => {
           <div className="space-y-5 text-white">
             <p className="text-lg font-semibold">Quicklinks</p>
             <ul className="space-y-3">
-              {navData.map((list, idx) => (
+              {footerData.map((list, idx) => (
                 <li key={idx} className="text-gray-400 hover:text-white">
                   <Link href={list.link}>{list.page}</Link>
                 </li>
@@ -66,7 +66,7 @@ const Footer = () => {
             </ul>
           </div>
           {/* Quicklink */}
-          <div className="space-y-5 text-white">
+          {/* <div className="space-y-5 text-white">
             <p className="text-lg font-semibold">Smeshub Program</p>
             <ul className="space-y-3">
               {programSmeshub.ecosystem.map((list, idx) => (
@@ -75,7 +75,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
           {/* Quicklink */}
           <div className="space-y-5 text-white max-w-sm">
             <p className="text-lg font-semibold">Company</p>

@@ -43,7 +43,7 @@ export const presentaseData = {
 };
 
 export const testimoniData = {
-    heading: "Kata Orang Penting Untuk Kemajuan Smeshub",
+    heading: "Kata Mereka Untuk Kemajuan Smeshub",
     subheading: "Apa kata orang penting untuk kemajuan smeshub?",
     testimoni: [
         {

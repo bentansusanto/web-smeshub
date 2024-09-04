@@ -44,3 +44,22 @@ export const contactCompany = {
     ]
 }
 
+export const footerData = [
+    {
+        page: "SmesXperience",
+        link: "/smes-xperience"
+    },
+    {
+        page: "SmesXpert",
+        link: "/smes-xpert"
+    },
+    {
+        page: "SmesPeople",
+        link: "/smes-people"
+    },
+    {
+        page: "Kolaborasi",
+        link: "/kolaborasi"
+    }
+]
+

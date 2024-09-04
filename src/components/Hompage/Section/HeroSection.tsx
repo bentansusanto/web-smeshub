@@ -33,7 +33,7 @@ const HeroSection = () => {
       className={`${
         isMobile
           ? "px-5 flex-col-reverse mt-16"
-          : "xl:px-32 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 flex-col-reverse"
+          : "xl:px-40 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 flex-col-reverse"
       } flex`}
     >
       <div className="space-y-10 xl:max-w-2xl lg:max-w-lg w-auto mt-10 lg:mt-0">
@@ -42,7 +42,7 @@ const HeroSection = () => {
             {data.subheading}
           </p>
           <h1
-            className={`${heading.className} font-bold xl:text-[42px] lg:text-[42px] text-3xl leading-snug`}
+            className={`${heading.className} font-bold xl:text-[52px] lg:text-[42px] text-3xl leading-snug`}
           >
             {data.heading}
           </h1>
@@ -57,7 +57,7 @@ const HeroSection = () => {
           </button>
         </div>
         {/* Success client */}
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <Image src={image.SuccessClient} alt="success-client" />
           <div className="space-y-2">
             <h3 className={`${heading.className} font-semibold text-2xl`}>
@@ -65,7 +65,7 @@ const HeroSection = () => {
             </h3>
             <p className="text-gray-400 text-sm">Success client</p>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="xl:max-w-3xl max-w-auto">
         <Image

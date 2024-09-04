@@ -40,7 +40,7 @@ const ContentVisionMision = () => {
   },[])
 
   return (
-    <div className="pb-10 pt-40 bg-[#001236] w-screen">
+    <div className="pb-10 pt-24 bg-[#001236] w-screen">
       <div className='space-y-3 text-center max-w-4xl text-white mx-auto'>
         <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {visionMission.subheading}
@@ -56,10 +56,10 @@ const ContentVisionMision = () => {
         </div>
       <div className=" text-white xl:px-56 lg:px-20 px-5 mt-10">
         {/* Vision & Mission */}
-        <div className="flex lg:flex-row flex-col-reverse gap-5 items-center justify-between lg:mt-40 mt-20">
-          <div className="space-y-5 max-w-lg lg:mt-0 mt-10">
+        <div className="flex lg:flex-row flex-col-reverse gap-5 items-center justify-between lg:mt-32 mt-20">
+          <div className="space-y-5 max-w-xl lg:mt-0 mt-10">
             <h2
-              className={`${heading.className} font-semibold leading-snug text-3xl`}
+              className={`${heading.className} font-semibold leading-snug xl:text-3xl text-2xl`}
             >
               {dataVision.heading}
             </h2>
@@ -81,13 +81,13 @@ const ContentVisionMision = () => {
           </div>
         </div>
         {/* Values */}
-        <div className="flex lg:flex-row flex-col gap-5 items-center justify-between mt-56">
+        <div className="flex lg:flex-row flex-col gap-5 items-center justify-between mt-32">
           <div className="max-w-2xl">
           <Image src={`${baseUrl}${imagesValues.url}`} width={0} height={0} className="w-auto" alt="bg-values" />
           </div>
           <div className="space-y-5 max-w-lg">
             <h2
-              className={`${heading.className} font-semibold leading-snug text-3xl`}
+              className={`${heading.className} font-semibold leading-snug text-2xl`}
             >
               {dataValues.heading}
             </h2>

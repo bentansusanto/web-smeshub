@@ -37,13 +37,13 @@ const GoodPeoples = () => {
   return (
     <div
       className={`${
-        isMobile ? "px-5 mt-96" : "xl:px-32 lg:px-20 md:px-8 my-56"
+        isMobile ? "px-5 mt-96" : "xl:px-32 lg:px-20 md:px-8 my-32"
       }`}
     >
       <div className="text-center mx-auto space-y-3 max-w-3xl">
-        <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
+        {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
           {testimoniData.subheading}
-        </p>
+        </p> */}
         <h1
           className={`${heading.className} font-bold xl:text-[32px] lg:text-[28px] text-3xl leading-snug`}
         >
@@ -51,7 +51,7 @@ const GoodPeoples = () => {
         </h1>
       </div>
       {/* data testimoni */}
-      <div className={`lg:mt-20 mt-40`}>
+      <div className={`lg:mt-10 mt-40`}>
         <div className="relative xl:max-w-5xl lg:max-w-3xl md:max-w-2xl mx-auto">
           <div className={` ${isMobile?"pt-40" : "lg:pt-10 lg:pb-10 md:pt-40"} bg-[#1D3C7A] xl:h-auto h-full p-10 w-full rounded-3xl relative`}>
             <div className="space-y-8 xl:max-w-2xl lg:max-w-xl mx-auto">
@@ -100,7 +100,7 @@ const GoodPeoples = () => {
             </div>
           </div>
           <div className={` ${isMobile? "w-full -top-24" : "lg:w-auto w-full"} absolute lg:top-0 md:-top-20 xl:-left-20 lg:-left-28 left-0`}>
-            <div className="overflow-hidden w-52 h-52 mx-auto">
+            <div className="overflow-hidden w-52 h-64 mx-auto">
               <Image
                 src={`${baseUrl}${data[currentIndex]?.picture.data.attributes.url}`}
                 width={0}

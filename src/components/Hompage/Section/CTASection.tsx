@@ -2,24 +2,25 @@ import { heading } from "@/common/FontFamily";
 import image from "@/libs/ImageData";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 // import { usePathname } from "next/navigation";
 import React from "react";
 
 
 const CTASection = () => {
-  // const pathname = usePathname();
+  const pathname = usePathname();
   
   
   // Kondisi untuk menyembunyikan CTA pada halaman artikel dan detail artikel
-  // if (pathname === '/berita' || pathname.startsWith('/berita/')) {
-  //   return null;
-  // }
+  if (pathname === '/') {
+    return null;
+  }
   
   
   
 
   return (
-    <div className="lg:max-w-4xl md:max-w-3xl rounded-3xl bg-[#002774] w-full mx-auto md:p-10 p-8 -top-24 relative ">
+    <div className="lg:max-w-4xl md:max-w-3xl rounded-3xl bg-[#002774] w-full mx-auto md:p-10 p-8 -top-24 relative hidden ">
       <div className="flex md:flex-row flex-col-reverse items-start justify-between ">
         {/* Content */}
         <div className="space-y-8 md:max-w-sm md:mt-0 mt-10">

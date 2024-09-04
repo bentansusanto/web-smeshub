@@ -13,7 +13,7 @@ const Homepage = () => {
       <HeroSection />
       <PersentaseSection />
       <GoodPeoples />
-      <ProgramSmeshub />
+      {/* <ProgramSmeshub /> */}
       {/* <EcosystemSection/> */}
       <MediaLiputSection />
     </>
