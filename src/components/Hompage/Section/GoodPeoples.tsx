@@ -37,7 +37,7 @@ const GoodPeoples = () => {
   return (
     <div
       className={`${
-        isMobile ? "px-5 mt-96" : "xl:px-32 lg:px-20 md:px-8 my-32"
+        isMobile ? "px-5 mt-28" : "xl:px-32 lg:px-20 md:px-8 mt-40"
       }`}
     >
       <div className="text-center mx-auto space-y-3 max-w-3xl">
