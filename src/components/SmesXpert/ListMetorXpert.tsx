@@ -3,6 +3,7 @@ import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { listMentor } from "@/libs/SmesXpertData";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const ListMetorXpert = () => {
@@ -50,7 +51,7 @@ const ListMetorXpert = () => {
     <div
       className={`${
         isMobile ? " px-5 mt-20" : "xl:px-32 lg:px-20 md:px-8 mt-20"
-      } mb-56`}
+      } mb-32`}
     >
         {/* Heading */}
       <div className="text-center mx-auto max-w-2xl">
@@ -76,9 +77,11 @@ const ListMetorXpert = () => {
         {
             currentItems.map((list:any, idx:any) => (
                 <div key={idx} className="space-y-3">
+                  <Link href={'#package-mentor'}>
                     <div className="space-y-3 mx-auto overflow-hidden rounded-full w-72 h-72 bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                         <Image src={`${baseUrl}${list.foto_mentor.data.attributes.url}`} width={0} height={0} className="w-auto object-cover object-center" alt="foto-mentor"/>
                     </div>
+                  </Link>
                     <div className="space-y-2">
                         <p className="font-semibold capitalize text-[18px] text-center">{list.name_mentor}</p>
                         <p className=" text-gray-500 text-center">{list.title}</p>

@@ -1,47 +1,29 @@
 export const listMentor = {
     heading: "Mentor Terbaik Smeshub",
-    subheading: "Welcome to Smeshub",
     body: "Temukan mentor pilihan anda yang sesuai dengan bisnis anda di smeshub utuk kemajuan usaha/bisnis anda",
-    mentor: [
+}
+
+export const packageMentor = {
+    heading: "Pilihan Program Mentorship",
+    body: "Mentoring langsung dengan mentor berpengalaman dari berbagai industri untuk akselerasi karir hingga bisnismu!",
+    package: [
         {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-1.jpg"
+            name_package: "Mentorship Series",
+            price: "IDR 699.000",
+            sesi: "3x sesi",
+            benefit: [
+                "Membantu mempermudah regulasi terkait",
+                "Membantu mempermudah regulasi terkait"
+            ],
         },
         {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-2.jpg"
-        },
-        {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-3.jpg"
-        },
-        {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-4.jpg"
-        },
-        {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-1.jpg"
-        },
-        {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-2.jpg"
-        },
-        {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-3.jpg"
-        },
-        {
-            name: "Amelie Laurent",
-            posisi: "CEO & Founder XYZ.com",
-            picture: "mentor-4.jpg"
+            name_package: "Mentorship Series",
+            price: "IDR 699.000",
+            sesi: "1x sesi",
+            benefit: [
+                "Membantu mempermudah regulasi terkait",
+                "Membantu mempermudah regulasi terkait"
+            ],
         },
     ]
 }
