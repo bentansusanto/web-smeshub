@@ -1,4 +1,5 @@
 import { heading } from "@/common/FontFamily";
+import { greetingMessage } from "@/common/GreetingMessage";
 import { Mobile } from "@/common/MediaQuery";
 import { packageMentor } from "@/libs/SmesXpertData";
 import Link from "next/link";
@@ -8,6 +9,20 @@ import { FaCheck } from "react-icons/fa";
 
 const PackageMentor = () => {
   const { isMobile } = Mobile();
+  const phoneNumber = "+6285716629957"
+  const handleOrderPackage = (list:any) => { 
+    const message = `
+        ${greetingMessage()} smeshub, saya mau order paket ${list.name_package} ${list.sesi}. Terima kasih
+        *Order Summary:*
+        Name Package: *${list.name_package}*,
+        Price: *${list.price}*
+        Sesi: *${list.sesi}*
+    `
+    const directWhatapp = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        message
+      )}`;
+    return directWhatapp;
+  }
   return (
     <div id="package-mentor" className={`${isMobile ? "my-20" : "my-24"}`}>
       <div className="space-y-3 text-center mx-auto xl:max-w-xl">
@@ -66,7 +81,7 @@ const PackageMentor = () => {
             </div>
             {/* button cta */}
             <div>
-                <Link href={'/'} target="_blank">
+                <Link href={handleOrderPackage(list)} target="_blank">
                 {
                     idx === 0 ? 
                     (<button className="bg-white py-4 w-full text-blue-700 font-semibold rounded-lg">Konsultasi Sekarang</button>) : 
