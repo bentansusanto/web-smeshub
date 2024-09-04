@@ -18,8 +18,8 @@ const ButtonCTA = () => {
   const grupTelegramSmesPeople = "https://t.me/komunitasumkmsmeshub";
   const linkFormSmesPeople = "https://forms.gle/64q7gwRzY4Azt5Nq6";
 
-  if(pathName === '/' || pathName === '/about'){
-    buttonLabel = 'Gabung Sekarang';
+  if(pathName === '/' || pathName === '/about-us/'){
+    buttonLabel = 'Ayo Kolaborasi';
     buttonHref = url
   }else if (pathName === '/smes-xperience'){
     buttonLabel = 'Gabung Sekarang';

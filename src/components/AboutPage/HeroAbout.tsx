@@ -1,11 +1,14 @@
 import { baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
+import ButtonCTA from "@/common/LogicButtonCTA";
 import { Mobile } from "@/common/MediaQuery";
 import image from "@/libs/ImageData";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const HeroAbout = () => {
+  const {buttonHref, buttonLabel} = ButtonCTA()
   const { isMobile } = Mobile();
   const [data, setData] = useState<any>({})
   useEffect(() => {
@@ -42,7 +45,7 @@ const HeroAbout = () => {
         <div className={` ${isMobile&& "pt-0"} relative pt-5`}>
           <div className="flex items-center space-x-5 text justify-center">
             <button className="bg-[#002774] border-[#002774] border py-3 font-medium px-6 rounded-full text-white text-sm">
-              Gabung Sekarang
+              <Link href={buttonHref}>{buttonLabel}</Link>
             </button>
             <button className="border-[#002774] text-[#002774] border py-3 px-6 rounded-full text-sm font-medium">
               Pelajari Lebih Lanjut

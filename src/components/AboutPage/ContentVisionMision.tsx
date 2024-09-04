@@ -40,7 +40,7 @@ const ContentVisionMision = () => {
   },[])
 
   return (
-    <div className="pb-10 pt-24 bg-[#001236] w-screen">
+    <div className="pb-10 lg:pt-24 xl:pt-32 bg-[#001236] w-screen">
       <div className='space-y-3 text-center max-w-4xl text-white mx-auto'>
         <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {visionMission.subheading}

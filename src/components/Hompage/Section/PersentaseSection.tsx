@@ -10,7 +10,7 @@ import { FaPlay } from "react-icons/fa";
 const PersentaseSection = () => {
   const pathName = usePathname
   return (
-    <div className="h-screen mt-24">
+    <div className="xl:h-[94vh] h-screen mt-24">
       <div className="relative">
         <div className="max-w-4xl px-5 mx-auto relative">
           <Image src={image.BgVideoPersentase} alt="bg-video-persentase" className="rounded-3xl"/>
