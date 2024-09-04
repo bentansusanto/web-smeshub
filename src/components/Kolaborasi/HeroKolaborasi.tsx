@@ -27,7 +27,7 @@ const HeroKolaborasi = () => {
         className={`${
           isMobile
             ? "px-5 flex-col-reverse mt-10"
-            : "xl:px-32 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20  flex-col-reverse"
+            : "xl:px-40 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 flex-col-reverse"
         } flex`}
       >
         <div className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">

@@ -14,6 +14,18 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        infinite_scroll_right: {
+          "0%": {transform: "translate(calc(-30% + 0.5rem))"}
+        },
+        infinite_scroll_left: {
+          "100%": {transform: "translate(calc(-30% + 0.5rem))"}
+        }
+      },
+      animation: {
+        infinite_scroll_right: "infinite_scroll_right 15s linear infinite",
+        infinite_scroll_left: "infinite_scroll_left 15s linear infinite",
+    },
     },
   },
   plugins: [require('preline/plugin')],

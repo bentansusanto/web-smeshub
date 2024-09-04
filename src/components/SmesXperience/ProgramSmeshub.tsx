@@ -51,7 +51,7 @@ const ProgramSmeshub = () => {
             {data.slice(0, 3).map((list: any, idx: any) => (
               <div
                 key={idx}
-                className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] shadow-gray-200 p-5 rounded-md"
+                className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] border  border-s-gray-200 border-e-gray-300 shadow-gray-200 p-5 rounded-md"
               >
                 <div className="">
                   <h3 className="text-xl font-semibold">{list.name_program}</h3>
