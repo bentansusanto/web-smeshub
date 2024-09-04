@@ -10,9 +10,10 @@ import { FaCheck } from "react-icons/fa";
 const PackageMentor = () => {
   const { isMobile } = Mobile();
   const phoneNumber = "+6285716629957"
-  const handleOrderPackage = (list:any) => { 
+  const greetingData = greetingMessage() 
+  const handleOrderPackage = (list:any) => {
     const message = `
-        ${greetingMessage()} smeshub, saya mau order paket ${list.name_package} ${list.sesi}. Terima kasih
+        ${greetingData} smeshub, saya mau order paket ${list.name_package} ${list.sesi}. Terima kasih
         *Order Summary:*
         Name Package: *${list.name_package}*,
         Price: *${list.price}*

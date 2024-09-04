@@ -16,5 +16,4 @@ export const greetingMessage = () => {
     };
     // console.log(greetings(currentHour))
     return greetings(currentHour)
-    
   };
