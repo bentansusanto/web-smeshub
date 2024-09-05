@@ -4,10 +4,13 @@ import '@/app/globals.css'
 import { kolaborasiCompany } from "@/libs/KolaborasiData";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import { baseUrl, fetchDataCommunityCompany } from "@/common/FetchData";
 
 const KolaborasiCompany = () => {
   const { isMobile } = Mobile();
   const scrollRef = useRef<HTMLDivElement>(null)
+  const {data} = fetchDataCommunityCompany()
+  
   useEffect(() => {
     const scroller = scrollRef.current
     function addAnimation() {
@@ -35,25 +38,25 @@ const KolaborasiCompany = () => {
         </h1>
       </div>
       <div className="space-y-8 mt-10">
-      <div ref={scrollRef}  className="flex items-center max-w-3xl mx-auto scroller overflow-hidden space-x-5">
-        <div className="flex flex-nowrap scroller_inner items-center space-x-5 animate-infinite_scroll_right ">
-          {kolaborasiCompany.community.map((list, idx) => (
-            <div key={idx} className="w-28">
-              <Image src={require(`@/assets/${list}`)} alt="image-data" />
+      <div ref={scrollRef} className="flex items-center max-w-4xl mx-auto scroller overflow-hidden space-x-5">
+        <div className="flex flex-nowrap scroller_inner items-center w-full space-x-5 animate-infinite_scroll_right ">
+          {data.slice(0,25).map((list:any, idx:any) => (
+            <div key={idx} className="w-32">
+              <Image src={`${baseUrl}${list.url}`} width={0} height={0} className="w-full" alt="image-data" />
             </div>
           ))}
         </div>
       </div>
       <div ref={scrollRef}  className="flex items-center max-w-3xl mx-auto scroller overflow-hidden space-x-5">
-        <div className="flex flex-nowrap scroller_inner items-center space-x-5 animate-infinite_scroll_left">
-          {kolaborasiCompany.community.map((list, idx) => (
-            <div key={idx} className="w-28">
-              <Image src={require(`@/assets/${list}`)} alt="image-data" />
+        <div className="flex flex-nowrap scroller_inner items-center w-full space-x-5 animate-infinite_scroll_left">
+          {data.slice(25, data.length).map((list:any, idx:any) => (
+            <div key={idx} className="w-32">
+              <Image src={`${baseUrl}${list.url}`} width={0} height={0} className="w-full" alt="image-data" />
             </div>
           ))}
         </div>
       </div>
-     
+      
       </div>
     </div>
   );

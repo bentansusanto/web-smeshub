@@ -35,7 +35,7 @@ const ProgramSmeshub = () => {
   const currentItems = data.slice(0, visibleItems);
 
   return (
-    <div className={`${isMobile ? "px-5" : "xl:px-32 lg:px-20 md:px-8"} mt-40`}>
+    <div className={`${isMobile ? "px-5" : "xl:px-56 lg:px-20 md:px-8"} mt-32`}>
       <div className="text-start space-y-3 max-w-3xl">
         <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
           {programSmeshub.subheading}

@@ -22,7 +22,7 @@ const PersentaseSection = () => {
           </div>
         </div>
         <div
-          className="bg-[#001236] w-screen absolute top-24 text-white xl:px-44 lg:px-20 px-5 md:pt-64 pt-40 pb-20"
+          className="bg-[#001236] w-screen absolute top-24 text-white xl:px-44 lg:px-20 px-5 md:pt-52 pt-40 pb-20"
           style={{ zIndex: "-1" }}
         >
           <div className=" flex md:flex-row flex-col items-center lg:space-x-20 space-x-10 lg:justify-between space-y-10 lg:space-y-0 justify-center lg:mt-36 md:mt-20">
@@ -42,7 +42,7 @@ const PersentaseSection = () => {
             </div>
           </div>
           {/* persentase */}
-          <div className="flex flex-wrap gap-12 lg:gap-0 lg:flex-row lg:justify-between justify-center xl:max-w-6xl lg:max-w-5xl max-w-2xl mt-32 mx-auto">
+          <div className="flex flex-wrap gap-12 lg:gap-0 lg:flex-row lg:justify-between justify-center xl:max-w-6xl lg:max-w-5xl max-w-2xl mt-24 mx-auto">
               {
                   presentaseData.presentase.map((list, idx) => (
                       <div key={idx} className="text-center space-y-2">

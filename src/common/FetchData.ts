@@ -1,6 +1,8 @@
 
 // import { useEffect, useState } from "react";
 
+import { useEffect, useState } from "react";
+
 export const baseUrl = "https://admin.smeshub.co.id";
 export const baseUrlApi = "https://admin.smeshub.co.id/api";
 
@@ -15,6 +17,25 @@ export const fetchData = async (url: string) => {
     throw error;
   }
 };
+
+// fetch data logo community&company partners
+export const fetchDataCommunityCompany = () => {
+  const [data, setData] = useState<any>([])
+  useEffect(() => {
+    const fetchDatas = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/community-company-partners?populate=logo&pagination[page]=1&pagination[pageSize]=53`)
+        const datas = res.map((list:any) => list.attributes.logo.data.attributes)
+        console.log(datas)
+        setData(datas)
+      } catch (error) {
+        throw new Error(`${error}`)
+      }
+    }
+    fetchDatas()
+  },[])
+  return {data}
+}
 
 // logic get data content heroSection in homepage
 // export const fetchDataHeroHome = () => {

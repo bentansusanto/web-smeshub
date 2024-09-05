@@ -37,10 +37,10 @@ const GoodPeoples = () => {
   return (
     <div
       className={`${
-        isMobile ? "px-5 mt-28" : "xl:px-32 lg:px-20 md:px-8 mt-40"
+        isMobile ? "px-5 mt-28" : "xl:px-40 lg:px-20 md:px-8 mt-12"
       }`}
     >
-      <div className="text-center mx-auto space-y-3 max-w-3xl">
+      <div className="space-y-3 max-w-3xl">
         {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
           {testimoniData.subheading}
         </p> */}
