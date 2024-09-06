@@ -5,6 +5,10 @@ export const heroData = {
   client_success: "3,2m",
 };
 
+export const clientSmeshubData = {
+    heading: "Dipercaya oleh perusahaan dan institusi yang mendukung pengembangan UMKM dan anak muda di Indonesia",
+}
+
 export const presentaseData = {
   body: "Dipercaya oleh perusahaan dan institusi yang mendukung pengembangan UMKM dan anak muda di Indonesia",
   logo_company: [
@@ -24,7 +28,7 @@ export const presentaseData = {
         value: "8.000+"
     },
     {
-        title: "Pemerintah",
+        title: "Instansi Pemerintah",
         value: "26"
     },
     {

@@ -2,8 +2,6 @@ import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import ButtonCTA from "@/common/LogicButtonCTA";
 import { Mobile } from "@/common/MediaQuery";
-import { heroData } from "@/libs/HomeData";
-import image from "@/libs/ImageData";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -25,7 +23,7 @@ const HeroSection = () => {
           res.attributes.bg_section1_homepage.data.attributes
         );
       } catch (error) {
-        throw new Error(`Error data ${error}`);
+        throw new Error(` ${error}`);
       }
     };
     getDataSectionHeroHome();
@@ -61,16 +59,6 @@ const HeroSection = () => {
             </Link>
           </button>
         </div>
-        {/* Success client */}
-        {/* <div className="flex items-center space-x-4">
-          <Image src={image.SuccessClient} alt="success-client" />
-          <div className="space-y-2">
-            <h3 className={`${heading.className} font-semibold text-2xl`}>
-              {heroData.client_success}
-            </h3>
-            <p className="text-gray-400 text-sm">Success client</p>
-          </div>
-        </div> */}
       </div>
       <div className="xl:max-w-3xl max-w-auto">
         <Image

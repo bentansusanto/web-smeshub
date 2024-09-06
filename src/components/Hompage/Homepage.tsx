@@ -4,14 +4,15 @@ import HeroSection from "./Section/HeroSection";
 import PersentaseSection from "./Section/PersentaseSection";
 // import EcosystemSection from './Section/EcosystemSection'
 import MediaLiputSection from "./Section/MediaLiputSection";
-import ProgramSmeshub from "../SmesXperience/ProgramSmeshub";
 import GoodPeoples from "./Section/GoodPeoples";
+import ClientsSmeshub from "./Section/ClientsSmeshub";
 
 const Homepage = () => {
   return (
     <>
       <HeroSection />
       <PersentaseSection />
+      <ClientsSmeshub/>
       <GoodPeoples />
       {/* <ProgramSmeshub /> */}
       {/* <EcosystemSection/> */}

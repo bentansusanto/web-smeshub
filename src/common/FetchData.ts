@@ -26,7 +26,42 @@ export const fetchDataCommunityCompany = () => {
       try {
         const res = await fetchData(`${baseUrlApi}/community-company-partners?populate=logo&pagination[page]=1&pagination[pageSize]=53`)
         const datas = res.map((list:any) => list.attributes.logo.data.attributes)
-        console.log(datas)
+        setData(datas)
+      } catch (error) {
+        throw new Error(`${error}`)
+      }
+    }
+    fetchDatas()
+  },[])
+  return {data}
+}
+
+// fetch data logo client smeshub
+export const fecthDataClientSmeshub = () => {
+  const [data, setData] = useState<any>([])
+  useEffect(() => {
+    const fetchDatas = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/client-smeshubs?populate=logo_client`)
+        const datas = res.map((list:any) => list.attributes.logo_client.data.attributes)
+        setData(datas)
+      } catch (error) {
+        throw new Error(`${error}`)
+      }
+    }
+    fetchDatas()
+  },[])
+  return {data}
+}
+
+// fetch data logo media liputan
+export const fetchMediaLiputan = () => {
+  const [data, setData] = useState<any>([])
+  useEffect(() => {
+    const fetchDatas = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/media-liputans?populate=logo_media&pagination[page]=1&pagination[pageSize]=50`)
+        const datas = res.map((list:any) => list.attributes.logo_media.data.attributes)
         setData(datas)
       } catch (error) {
         throw new Error(`${error}`)
