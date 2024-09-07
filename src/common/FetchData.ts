@@ -72,6 +72,25 @@ export const fetchMediaLiputan = () => {
   return {data}
 }
 
+// fetch data testimoni smespeople
+export const fetchDataTestimoniSmesPeople = () => {
+  const [data, setData] = useState<any>([])
+  useEffect(() => {
+    const fetchDatas = async() => {
+      try {
+        const res = await fetchData(`${baseUrlApi}/testimonis`)
+        const datas = res.map((list:any) => list.attributes)
+        setData(datas)
+      } catch (error) {
+        throw new Error(`${error}`)
+      }
+    }
+    fetchDatas()
+  },[])
+  
+  return {data}
+}
+
 // logic get data content heroSection in homepage
 // export const fetchDataHeroHome = () => {
 //   const [data, setData] = useState<any>({});

@@ -19,5 +19,6 @@ const MediaQuery = (query: string) => {
 
 export const Mobile = () => {
     const isMobile = MediaQuery("(max-width:767px)")
-    return {isMobile};
+    const isTablet = MediaQuery('(min-width: 768px) and (max-width: 1023px)')
+    return {isMobile, isTablet};
 }

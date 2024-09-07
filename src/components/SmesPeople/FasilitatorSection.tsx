@@ -3,6 +3,7 @@ import { heading } from '@/common/FontFamily'
 import { Mobile } from '@/common/MediaQuery'
 import { fasilitatorData } from '@/libs/SmesPeopleData'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 
@@ -27,9 +28,9 @@ const FasilitatorSection = () => {
   return (
     <div className={`${
         isMobile
-          ? "px-5 mt-40 flex-col gap-10"
-          : "xl:px-32 lg:px-20 md:px-8 mt-40 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
-      } flex mb-56`}>
+          ? "px-5 mt-24 flex-col gap-10"
+          : "xl:px-32 lg:px-20 md:px-8 mt-24 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
+      } flex mb-32`}>
       <div className="space-y-5 max-w-xl">
         <div>
           <Image
@@ -48,10 +49,12 @@ const FasilitatorSection = () => {
           </h2>
           <p className="text-gray-400">{data.body}</p>
         </div>
-        <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
-          <p>Gabung Sekarang</p>
-          <BsArrowRight className="text-xl"/>
-        </button>
+        <Link href={fasilitatorData.link}>
+          <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
+            <p>Gabung Sekarang</p>
+            <BsArrowRight className="text-xl"/>
+          </button>
+        </Link>
       </div>
       <div className="xl:max-w-3xl lg:max-w-xl">
         <Image

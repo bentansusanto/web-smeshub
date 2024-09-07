@@ -35,18 +35,18 @@ const ProgramSmeshub = () => {
   const currentItems = data.slice(0, visibleItems);
 
   return (
-    <div className={`${isMobile ? "px-5" : "xl:px-56 lg:px-20 md:px-8"} mt-32`}>
-      <div className="text-start space-y-3 max-w-3xl">
-        <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
+    <div className={`${isMobile ? "px-5" : "xl:px-40 lg:px-20 md:px-8"} mt-32`}>
+      <div className="text-start xl:mx-auto xl:text-center space-y-3 max-w-3xl">
+        {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
           {programSmeshub.subheading}
-        </p>
+        </p> */}
         <h1
           className={`${heading.className} font-bold xl:text-[32px] lg:text-[28px] text-3xl leading-snug`}
         >
           {programSmeshub.heading}
         </h1>
       </div>
-      <div className="mt-10 flex flex-col gap-5 ">
+      <div className="mt-10 flex flex-col gap-5 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
             {data.slice(0, 3).map((list: any, idx: any) => (
               <div
