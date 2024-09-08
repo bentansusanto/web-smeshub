@@ -1,7 +1,9 @@
 import { baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
+import image from "@/libs/ImageData";
 import { programSmeshub } from "@/libs/SmesExperienceData";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IoCheckmarkDone } from "react-icons/io5";
 
@@ -35,7 +37,7 @@ const ProgramSmeshub = () => {
   const currentItems = data.slice(0, visibleItems);
 
   return (
-    <div className={`${isMobile ? "px-5" : "xl:px-40 lg:px-20 md:px-8"} mt-32`}>
+    <div className={`${isMobile ? "px-5" : "xl:px-40 lg:px-20 md:px-8"} mt-32 bg-gray-200 py-10 relative`}>
       <div className="text-start xl:mx-auto xl:text-center space-y-3 max-w-3xl">
         {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
           {programSmeshub.subheading}
@@ -51,7 +53,7 @@ const ProgramSmeshub = () => {
             {data.slice(0, 3).map((list: any, idx: any) => (
               <div
                 key={idx}
-                className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] border  border-s-gray-200 border-e-gray-300 shadow-gray-200 p-5 rounded-md"
+                className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] border    p-5 rounded-md"
               >
                 <div className="">
                   <h3 className="text-xl font-semibold">{list.name_program}</h3>
@@ -75,7 +77,7 @@ const ProgramSmeshub = () => {
             {data.slice(3, data.length).map((list: any, idx: any) => (
               <div
                 key={idx}
-                className="bg-gradient-to-tl from-gray-100 to-gray-50 p-5 rounded-md"
+                className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] p-5 rounded-md"
               >
                 <div className="">
                   <h3 className="text-xl font-semibold">{list.name_program}</h3>
@@ -154,6 +156,13 @@ const ProgramSmeshub = () => {
           </div>
         )}
       </div> */}
+      <div
+        className={`absolute top-0 right-0 xl:w-40 lg:w-28 md:w-28 ${
+          isMobile && "hidden"
+        }`}
+      >
+        <Image src={image.Pattern1} alt="pattern-1"  />
+      </div>
     </div>
   );
 };

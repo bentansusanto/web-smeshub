@@ -25,7 +25,6 @@ const GoodPeoples = () => {
           `${baseUrlApi}/kutipan-orang-pentings?populate=picture`
         );
         const datas = res.map((list: any) => list.attributes);
-        console.log(datas);
         setData(datas);
       } catch (error) {
         throw new Error(`Error data ${error}`);

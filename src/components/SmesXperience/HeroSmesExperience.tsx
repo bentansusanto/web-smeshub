@@ -1,13 +1,16 @@
 import { baseUrl, baseUrlApi, fetchData } from '@/common/FetchData';
 import { heading } from '@/common/FontFamily';
+import ButtonCTA from '@/common/LogicButtonCTA';
 import { Mobile } from '@/common/MediaQuery'
 import { heroData } from '@/libs/HomeData';
 import image from '@/libs/ImageData';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const HeroSmesExperience = () => {
     const { isMobile } = Mobile();
+    const {buttonHref, buttonLabel} = ButtonCTA()
     const [data, setData] = useState<any>({})
   const [images, setImages] = useState<any>({})
   
@@ -47,9 +50,11 @@ const HeroSmesExperience = () => {
         </div>
         {/* button cta */}
         <div className="flex flex-row items-center gap-3">
-          <button className="bg-[#002774] border-[#002774] border py-3 font-medium px-6 rounded-full text-white text-sm">
-            Gabung Sekarang
-          </button>
+          <Link href={buttonHref}>
+            <button className="bg-[#002774] border-[#002774] border py-3 font-medium px-6 rounded-full text-white text-sm">
+              {buttonLabel}
+            </button>
+          </Link>
         </div>
       </div>
       <div className="xl:max-w-3xl max-w-auto">

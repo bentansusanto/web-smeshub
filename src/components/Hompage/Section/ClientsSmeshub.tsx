@@ -2,6 +2,7 @@ import { baseUrl, FecthDataClientSmeshub } from '@/common/FetchData'
 import { heading } from '@/common/FontFamily'
 import { Mobile } from '@/common/MediaQuery'
 import { clientSmeshubData, presentaseData } from '@/libs/HomeData'
+import image from '@/libs/ImageData'
 import Image from 'next/image'
 import React from 'react'
 
@@ -10,7 +11,7 @@ const ClientsSmeshub = () => {
     const {data} = FecthDataClientSmeshub()
     
   return (
-    <div className={`${isMobile? "px-5" : "xl:px-40 lg:px-20 px-8"} mt-32`}>
+    <div className={`${isMobile? "px-5" : "xl:px-40 lg:px-20 px-8"} mt-32 relative`}>
         <div className="text-center mx-auto space-y-3 max-w-3xl">
         <h1
           className={`${heading.className} font-medium xl:text-[20px] lg:text-[18px] text-2xl leading-snug`}
@@ -26,6 +27,9 @@ const ClientsSmeshub = () => {
                       </div>
                   ))
               }
+            </div>
+            <div className={`absolute bottom-0 left-0 xl:w-auto lg:w-24 md:w-20 ${isMobile&&"hidden"}`}>
+              <Image src={image.Pattern1} alt='pattern-1' />
             </div>
     </div>
   )

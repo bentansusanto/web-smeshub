@@ -10,6 +10,8 @@ import Arrow from '@/assets/arrow.svg'
 import BgVision from '@/assets/bg-vision.png'
 import BgSmesPeople from '@/assets/bg-smespeople.png'
 import BgKolaborasiPage from '@/assets/bg-kolaborasi.png'
+import Pattern1 from '@/assets/pattern-1.svg'
+import Pattern2 from '@/assets/pattern-2.svg'
 
 const image = {
     LogoSmeshub,
@@ -23,6 +25,9 @@ const image = {
     Arrow,
     BgVision,
     BgSmesPeople,
-    BgKolaborasiPage
+    BgKolaborasiPage,
+    Pattern1,
+    Pattern2
+
 }
 export default image

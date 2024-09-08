@@ -3,11 +3,13 @@ import { Mobile } from "@/common/MediaQuery";
 import { presentaseData } from "@/libs/HomeData";
 import image from "@/libs/ImageData";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { FaPlay } from "react-icons/fa";
 
 const PersentaseSection = () => {
- 
+ const {isMobile} = Mobile()
+ const pathName = usePathname()
   return (
     <div className="mt-44">
       <div className="relative bg-[#001236] pb-10">
@@ -31,6 +33,14 @@ const PersentaseSection = () => {
                   ))
               }
           </div>
+          {
+            pathName === 'about-us/' && 
+            (
+            <div className={`absolute lg:top-0 md:bottom-0 right-0 xl:w-auto lg:w-24 md:w-24 ${isMobile&&"hidden"}`}>
+                <Image src={image.Pattern1} alt='pattern-1' />
+              </div>
+            )
+          }
       </div>
     </div>
   );

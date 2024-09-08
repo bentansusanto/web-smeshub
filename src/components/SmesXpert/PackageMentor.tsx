@@ -1,14 +1,16 @@
 import { heading } from "@/common/FontFamily";
 import { greetingMessage } from "@/common/GreetingMessage";
 import { Mobile } from "@/common/MediaQuery";
+import image from "@/libs/ImageData";
 import { packageMentor } from "@/libs/SmesXpertData";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
 
 const PackageMentor = () => {
-  const { isMobile } = Mobile();
+  const { isMobile, isTablet } = Mobile();
   const phoneNumber = "+6285716629957"
   const greetingData = greetingMessage() 
   const handleOrderPackage = (list:any) => {
@@ -25,14 +27,14 @@ const PackageMentor = () => {
     return directWhatapp;
   }
   return (
-    <div id="package-mentor" className={`${isMobile ? "my-20" : "my-24"}`}>
+    <div id="package-mentor" className={`${isMobile ? "my-20" : "my-24"} relative`}>
       <div className="space-y-3 text-center mx-auto xl:max-w-xl">
         <h1
           className={`${heading.className} font-bold xl:text-[32px] lg:text-[36px] text-3xl leading-snug`}
         >
           {packageMentor.heading}
         </h1>
-        <p className=" text-sm text-gray-400 leading-relaxed">
+        <p className=" text-sm text-gray-400 leading-relaxed max-w-xl mx-auto">
           {packageMentor.body}
         </p>
       </div>
@@ -92,6 +94,14 @@ const PackageMentor = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div
+        className={`absolute top-0 left-0 xl:w-40 lg:w-28 md:w-28 ${
+          isMobile || isTablet ? "hidden" : null
+        }`}
+      >
+        <Image src={image.Pattern1} alt="pattern-1"  />
       </div>
     </div>
   );

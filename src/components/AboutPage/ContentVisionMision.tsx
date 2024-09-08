@@ -1,5 +1,6 @@
 import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
+import { Mobile } from "@/common/MediaQuery";
 import { visionMission } from "@/libs/AboutData";
 import image from "@/libs/ImageData";
 import Image from "next/image";
@@ -8,7 +9,7 @@ import { FaPlay } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 
 const ContentVisionMision = () => {
-
+const {isMobile} = Mobile()
   const [dataVision, setDataVision] = useState<any>({})
   const [dataValues, setDataValues] = useState<any>({})
   const [imagesVision, setImagesVision] = useState<any>({})
@@ -40,11 +41,11 @@ const ContentVisionMision = () => {
   },[])
 
   return (
-    <div className="pb-10 lg:pt-24 xl:pt-32 bg-[#001236] w-screen">
+    <div className="pb-10 lg:pt-24 xl:pt-32 bg-[#001236] w-screen relative">
       <div className='space-y-3 text-center max-w-4xl text-white mx-auto'>
-        <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
+        {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {visionMission.subheading}
-          </p>
+          </p> */}
           <h1
             className={`${heading.className} font-bold xl:text-[36px] lg:text-[42px] text-2xl leading-snug`}
           >
@@ -108,6 +109,20 @@ const ContentVisionMision = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className={`absolute lg:top-0 md:bottom-0 left-0 xl:w-40 lg:w-28 md:w-28 ${
+          isMobile && "hidden"
+        }`}
+      >
+        <Image src={image.Pattern1} alt="pattern-1" className="rotate-180" />
+      </div>
+      <div
+        className={`absolute bottom-0 right-0 xl:w-40 lg:w-28 md:w-28 ${
+          isMobile && "hidden"
+        }`}
+      >
+        <Image src={image.Pattern1} alt="pattern-1"  />
       </div>
     </div>
   );

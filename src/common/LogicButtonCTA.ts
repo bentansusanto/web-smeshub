@@ -21,10 +21,10 @@ const ButtonCTA = () => {
   if(pathName === '/' || pathName === '/about-us/'){
     buttonLabel = 'Ayo Kolaborasi';
     buttonHref = url
-  }else if (pathName === '/smes-xperience'){
+  }else if (pathName === '/smes-xperience/'){
     buttonLabel = 'Gabung Sekarang';
     buttonHref = urlPartner;
-  }else if (pathName === '/smes-people'){
+  }else if (pathName === '/smes-people/'){
     buttonLabel = 'Gabung Komunitas';
     buttonHref = grupTelegramSmesPeople;
     buttonForm = linkFormSmesPeople

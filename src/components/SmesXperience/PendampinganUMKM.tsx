@@ -3,7 +3,7 @@ import { heading } from '@/common/FontFamily'
 import { Mobile } from '@/common/MediaQuery'
 import { pendampinganUMKM } from '@/libs/SmesExperienceData'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 
 const PendampinganUMKM = () => {
@@ -29,7 +29,7 @@ const PendampinganUMKM = () => {
         isMobile
           ? "px-5 mt-40 flex-col gap-10"
           : "xl:px-32 lg:px-20 md:px-8 mt-40 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
-      } flex`}>
+      } flex relative`}>
       <div className="space-y-5 max-w-xl">
         <div>
         <Image
@@ -62,6 +62,7 @@ const PendampinganUMKM = () => {
           alt="bg-pendampingan-umkm"
         />
       </div>
+      
     </div>
   )
 }
