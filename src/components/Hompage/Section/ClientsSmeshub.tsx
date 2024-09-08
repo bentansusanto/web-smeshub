@@ -1,4 +1,4 @@
-import { baseUrl, fecthDataClientSmeshub } from '@/common/FetchData'
+import { baseUrl, FecthDataClientSmeshub } from '@/common/FetchData'
 import { heading } from '@/common/FontFamily'
 import { Mobile } from '@/common/MediaQuery'
 import { clientSmeshubData, presentaseData } from '@/libs/HomeData'
@@ -7,7 +7,7 @@ import React from 'react'
 
 const ClientsSmeshub = () => {
     const {isMobile} = Mobile()
-    const {data} = fecthDataClientSmeshub()
+    const {data} = FecthDataClientSmeshub()
     
   return (
     <div className={`${isMobile? "px-5" : "xl:px-40 lg:px-20 px-8"} mt-32`}>

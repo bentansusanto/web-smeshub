@@ -1,5 +1,5 @@
 import { AnimateInfiniteScroll } from "@/common/AnimateInfiniteScroll";
-import { baseUrl, fetchMediaLiputan } from "@/common/FetchData";
+import { baseUrl, FetchMediaLiputan } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { mediaLiputData } from "@/libs/HomeData";
@@ -9,7 +9,7 @@ import React from "react";
 
 const MediaLiputSection = () => {
   const { isMobile } = Mobile();
-  const { data } = fetchMediaLiputan();
+  const { data } = FetchMediaLiputan();
   const { scrollRef } = AnimateInfiniteScroll();
   return (
     <div className={`${isMobile ? "px-5" : "xl:px-32 lg:px-20 md:px-8"} my-20`}>

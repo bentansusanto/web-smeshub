@@ -4,12 +4,12 @@ import '@/app/globals.css'
 import { kolaborasiCompany } from "@/libs/KolaborasiData";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { baseUrl, fetchDataCommunityCompany } from "@/common/FetchData";
+import { baseUrl, FetchDataCommunityCompany } from "@/common/FetchData";
 
 const KolaborasiCompany = () => {
   const { isMobile } = Mobile();
   const scrollRef = useRef<HTMLDivElement>(null)
-  const {data} = fetchDataCommunityCompany()
+  const {data} = FetchDataCommunityCompany()
   
   useEffect(() => {
     const scroller = scrollRef.current

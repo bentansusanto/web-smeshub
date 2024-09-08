@@ -18,7 +18,7 @@ export const fetchData = async (url: string) => {
 };
 
 // fetch data logo community&company partners
-export const fetchDataCommunityCompany = () => {
+export const FetchDataCommunityCompany = () => {
   const [data, setData] = useState<any>([])
   useEffect(() => {
     const fetchDatas = async() => {
@@ -36,7 +36,7 @@ export const fetchDataCommunityCompany = () => {
 }
 
 // fetch data logo client smeshub
-export const fecthDataClientSmeshub = () => {
+export const FecthDataClientSmeshub = () => {
   const [data, setData] = useState<any>([])
   useEffect(() => {
     const fetchDatas = async() => {
@@ -54,7 +54,7 @@ export const fecthDataClientSmeshub = () => {
 }
 
 // fetch data logo media liputan
-export const fetchMediaLiputan = () => {
+export const FetchMediaLiputan = () => {
   const [data, setData] = useState<any>([])
   useEffect(() => {
     const fetchDatas = async() => {
@@ -72,7 +72,7 @@ export const fetchMediaLiputan = () => {
 }
 
 // fetch data testimoni smespeople
-export const fetchDataTestimoniSmesPeople = () => {
+export const FetchDataTestimoniSmesPeople = () => {
   const [data, setData] = useState<any>([])
   useEffect(() => {
     const fetchDatas = async() => {

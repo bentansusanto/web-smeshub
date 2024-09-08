@@ -1,4 +1,4 @@
-import { fetchDataTestimoniSmesPeople } from "@/common/FetchData";
+import { FetchDataTestimoniSmesPeople } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { testimoniSmesPeople } from "@/libs/SmesPeopleData";
@@ -8,7 +8,7 @@ import Slider from "react-slick";
 const TestimoniSection = () => {
   const { isMobile, isTablet } = Mobile();
   const currentPage = isMobile ? 1 : isTablet ? 2 : 3;
-  const { data } = fetchDataTestimoniSmesPeople();
+  const { data } = FetchDataTestimoniSmesPeople();
   const settings = {
     dots: true,
     infinite: true,
