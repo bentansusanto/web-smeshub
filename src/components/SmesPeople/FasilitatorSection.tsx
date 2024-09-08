@@ -29,7 +29,7 @@ const FasilitatorSection = () => {
     <div className={`${
         isMobile
           ? "px-5 mt-24 flex-col gap-10"
-          : "xl:px-32 lg:px-20 md:px-8 mt-24 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
+          : "xl:px-32 lg:px-20 md:px-8 mt-32 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
       } flex mb-32`}>
       <div className="space-y-5 max-w-xl">
         <div>

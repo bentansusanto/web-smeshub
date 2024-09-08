@@ -1,7 +1,7 @@
 import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
-import { kompetisiBisnis } from "@/libs/SmesExperienceData";
+// import { kompetisiBisnis } from "@/libs/SmesExperienceData";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";

@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import PrelineScript from "@/common/PrelineScript";
 import Favicon from '@/app/favicon.png'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

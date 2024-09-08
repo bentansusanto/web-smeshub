@@ -17,3 +17,7 @@ p{
 .scroller_inner{
   width: max-content;
 }
+
+.slick-slide > div{
+  margin: 0 10px;
+}

@@ -2,16 +2,21 @@ import { baseUrl, baseUrlApi, fetchData } from "@/common/FetchData";
 import { heading } from "@/common/FontFamily";
 import { Mobile } from "@/common/MediaQuery";
 import { testimoniData } from "@/libs/HomeData";
-import image from "@/libs/ImageData";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
 
 const GoodPeoples = () => {
   const { isMobile } = Mobile();
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState<any>([]);
-  const cardsPerPage = isMobile? 1 : 2;
+  const currentPage = isMobile ? 1 : 2;
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: currentPage,
+    slidesToShow: currentPage,
+  };
 
   useEffect(() => {
     const dataGoodPeople = async () => {
@@ -20,7 +25,7 @@ const GoodPeoples = () => {
           `${baseUrlApi}/kutipan-orang-pentings?populate=picture`
         );
         const datas = res.map((list: any) => list.attributes);
-        console.log(datas)
+        console.log(datas);
         setData(datas);
       } catch (error) {
         throw new Error(`Error data ${error}`);
@@ -28,16 +33,6 @@ const GoodPeoples = () => {
     };
     dataGoodPeople();
   }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex + cardsPerPage >= data.length ? 0 : prevIndex + 1
-      );
-    }, 3000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, [currentIndex, data.length]);
 
   return (
     <div
@@ -55,40 +50,49 @@ const GoodPeoples = () => {
           >
             {testimoniData.heading}
           </h1>
-          
         </div>
       </div>
       {/* data testimoni */}
       <div className=" mt-10">
-        <div className={`${isMobile&&"overflow-hidden"} flex gap-4`}>
-          {data
-            .slice(currentIndex, currentIndex + cardsPerPage)
-            .map((list: any, idx: any) => (
-              <div key={idx} className="bg-blue-800 h-auto rounded-lg shadow-md w-full flex items-end relative">
-                <div className="absolute top-0" style={{zIndex: 0}}>
-                  <h2 className={`${heading.className} font-bold text-[8rem] text-white opacity-5`}>{list.name}</h2>
-                </div>
-                <div className="flex lg:flex-row flex-col-reverse gap-x-5 pt-20 items-end justify-start" style={{zIndex: 1}}>
-                  <div className="mx-auto w-[90%]">
+        <Slider {...settings}>
+          {data.map((list: any, idx: any) => (
+            <div
+              key={idx}
+              className="bg-blue-800  xl:h-[50vh] h-[60vh] rounded-lg shadow-md w-full flex items-end relative"
+            >
+              <div className="absolute top-0" style={{ zIndex: 0 }}>
+                <h2
+                  className={`${heading.className} font-bold xl:text-[8rem] text-white opacity-5`}
+                >
+                  {list.name}
+                </h2>
+              </div>
+              <div
+                className="grid lg:grid-cols-2 grid-cols-1 gap-5 pt-20 mx-5 mt-5 items-end justify-start absolute bottom-0 "
+                style={{ zIndex: 1 }}
+              >
+                <div className="mx-auto xl:w-[100%] lg:w-[100%] w-[60%] ">
                   <Image
-                  src={`${baseUrl}${list.picture.data.attributes.url}`}
-                  width={0}
-                  height={0}
-                  alt="image-testimoni"
-                  className="w-auto"
-                />
-                  </div>
-                  <div className="space-y-5  text-white p-5">
-                      <h4 className="text-2xl font-bold leading-relaxed">{list.message}</h4>
-                    <div className="space-y-2">
-                      <p className="text-white font-semibold">{list.name}</p>
-                      <p className="text-gray-400">{list.title}</p>
-                    </div>
+                    src={`${baseUrl}${list.picture.data.attributes.url}`}
+                    width={0}
+                    height={0}
+                    alt="image-testimoni"
+                    className="w-auto"
+                  />
+                </div>
+                <div className="space-y-5  text-white pb-5 ">
+                  <h4 className="xl:text-xl lg:text-xl md:text-[18px] text-[17px] font-bold leading-relaxed">
+                    {list.message}
+                  </h4>
+                  <div className="space-y-2">
+                    <p className="text-white font-semibold">{list.name}</p>
+                    <p className="text-gray-400">{list.title}</p>
                   </div>
                 </div>
               </div>
-            ))}
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
