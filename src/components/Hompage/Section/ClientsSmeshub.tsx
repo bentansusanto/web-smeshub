@@ -12,9 +12,9 @@ const ClientsSmeshub = () => {
     
   return (
     <div className={`${isMobile? "px-5" : "xl:px-40 lg:px-20 px-8"} mt-32 relative`}>
-        <div data-aos="fade-up" className="text-center mx-auto space-y-3 max-w-3xl">
+        <div data-aos="fade-up" className="text-center mx-auto space-y-3 max-w-2xl">
         <h1
-          className={`${heading.className} font-medium xl:text-[20px] lg:text-[18px] text-2xl leading-snug`}
+          className={`${heading.className} font-semibold xl:text-[20px] lg:text-[18px] text-xl leading-snug`}
         >
           {clientSmeshubData.heading}
         </h1>

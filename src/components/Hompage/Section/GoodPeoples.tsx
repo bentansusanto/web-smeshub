@@ -43,7 +43,7 @@ const GoodPeoples = () => {
         {/* <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
           {testimoniData.subheading}
         </p> */}
-        <div className="flex items-center justify-between">
+        <div className="md:text-start text-center">
           <h1
             className={`${heading.className} font-bold xl:text-[32px] lg:text-[28px] text-3xl leading-snug`}
           >
@@ -57,11 +57,11 @@ const GoodPeoples = () => {
           {data.map((list: any, idx: any) => (
             <div
               key={idx}
-              className="bg-blue-800  xl:h-[50vh] h-[60vh] rounded-lg shadow-md w-full flex items-end relative"
+              className={`${isMobile? "h-[70vh]" : "xl:h-[50vh] h-[60vh]"} bg-blue-800   rounded-lg shadow-md w-full flex items-end relative`}
             >
               <div className="absolute top-0" style={{ zIndex: 0 }}>
                 <h2
-                  className={`${heading.className} font-bold xl:text-[8rem] text-white opacity-5`}
+                  className={`${heading.className} font-bold text-[8rem] text-white opacity-5`}
                 >
                   {list.name}
                 </h2>
@@ -70,7 +70,7 @@ const GoodPeoples = () => {
                 className="grid lg:grid-cols-2 grid-cols-1 gap-5 pt-20 mx-5 mt-5 items-end justify-start absolute bottom-0 "
                 style={{ zIndex: 1 }}
               >
-                <div className="mx-auto xl:w-[100%] lg:w-[100%] w-[60%] ">
+                <div className="mx-auto xl:w-[100%] lg:w-[100%] w-[75%] ">
                   <Image
                     src={`${baseUrl}${list.picture.data.attributes.url}`}
                     width={0}

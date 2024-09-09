@@ -11,6 +11,11 @@ import { LuMenu } from "react-icons/lu";
 const Header = () => {
   const { isMobile } = Mobile();
   const [open, setOpen] = useState<boolean>(false);
+  const phoneSmeshub = "+6285716629957";
+  const message = "Halo, saya tertarik untuk mengetahui lebih lanjut!";
+  const url = `https://wa.me/${phoneSmeshub}?text=${encodeURIComponent(
+    message
+  )}`;
 
   const handleOpenMenuMobile = () => {
     setOpen(!open);
@@ -45,16 +50,18 @@ const Header = () => {
             <ul className="space-y-3">
                 {
                     navData.map((list, idx) => (
-                        <li key={idx} className="px-5 py-3 transition-all duration-300 py-23 hover:bg-gray-200">
+                        <li key={idx} className="px-5 py-3 transition-all font-medium duration-300 py-23 hover:bg-gray-200">
                             <Link href={list.link}>{list.page}</Link>
                         </li>
                     ))
                 }
             </ul>
             <div className="px-5">
+              <Link href={url}>
                 <button className="bg-[#002774] py-3 font-semibold text-center w-full mt-5 text-white rounded-full">
-                    Contact Us
+                    Gabung Sekarang
                 </button>
+              </Link>
             </div>
           </div>
         </div>

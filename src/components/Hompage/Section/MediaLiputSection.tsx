@@ -15,7 +15,7 @@ const MediaLiputSection = () => {
     <div className={`${isMobile ? "px-5" : "xl:px-32 lg:px-20 md:px-8"} my-20`}>
       <div className="text-center mx-auto space-y-3 max-w-3xl">
         <h1
-          className={`${heading.className} font-medium xl:text-[18px] lg:text-[18px] text-2xl leading-snug`}
+          className={`${heading.className} font-semibold xl:text-[18px] lg:text-[18px] text-xl leading-snug`}
         >
           {mediaLiputData.heading}
         </h1>

@@ -28,8 +28,8 @@ const CommunityPatner = () => {
     <div className={`${
         isMobile
           ? "px-5 mt-40 flex-col-reverse gap-10"
-          : "xl:px-32 lg:px-20 md:px-8 mt-32 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
-      } flex mb-56`}>
+          : "xl:px-32 lg:px-20 md:px-8 mt-28 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
+      } flex mb-28`}>
       <div data-aos="fade-right" className="space-y-5 max-w-xl">
         <div>
         <Image

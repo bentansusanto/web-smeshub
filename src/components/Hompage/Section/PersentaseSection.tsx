@@ -20,12 +20,12 @@ const PersentaseSection = () => {
       <div className="relative bg-[#001236] pb-10">
         <div
           data-aos="fade-up"
-          className="max-w-4xl px-5 mx-auto relative -top-20"
+          className="max-w-4xl md:rounded-3xl rounded-md md:h-full h-56 px-5 mx-auto relative -top-20"
         >
           <Image
             src={image.BgVideoPersentase}
             alt="bg-video-persentase"
-            className="rounded-3xl"
+            className="h-full object-cover object-center"
           />
           <div
             onClick={handleOpenModal}
@@ -70,18 +70,19 @@ const PersentaseSection = () => {
         } fixed z-40 top-0 w-screen h-screen bg-[#08080880]`}
       >
         <div className="flex h-screen items-center justify-center">
-          <div className="flex items-start gap-5">
-            <iframe
-            className="rounded-lg"
-              width="1259"
-              height="708"
-              src="https://www.youtube.com/embed/fkd_4R2G3rI"
-              title="How To Embed YouTube Videos in React / Gatsby (and make them Responsive)"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+          <div className="flex lg:flex-row flex-col-reverse items-start gap-5">
+            <div className="md:w-[80vw] w-[90vw] lg:w-[70vw] lg:h-[60vh] md:h-[40vh] h-64">
+              <iframe
+              className="rounded-lg w-full h-full object-cover object-center"
+                src="https://www.youtube.com/embed/fkd_4R2G3rI"
+                title="How To Embed YouTube Videos in React / Gatsby (and make them Responsive)"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                
+              ></iframe>
+            </div>
           <div onClick={() => setOpenModal(false)}>
             <IoClose className="text-4xl text-white"/>
           </div>
