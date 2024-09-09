@@ -78,7 +78,7 @@ const ListMetorXpert = () => {
             currentItems.map((list:any, idx:any) => (
                 <div data-aos="zoom-in" key={idx} className="space-y-3">
                   <Link href={'#package-mentor'}>
-                    <div className="space-y-3 mx-auto overflow-hidden rounded-full w-72 h-72 bg-gray-100 transition-all duration-500 hover:bg-blue-600">
+                    <div className="space-y-3 mx-auto overflow-hidden rounded-full xl:w-52 xl:h-52 md:w-52 md:h-52 w-36 h-36 bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                         <Image src={`${baseUrl}${list.foto_mentor.data.attributes.url}`} width={0} height={0} className="w-auto object-cover object-center" alt="foto-mentor"/>
                     </div>
                   </Link>
