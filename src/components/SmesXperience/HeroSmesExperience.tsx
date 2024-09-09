@@ -34,7 +34,7 @@ const HeroSmesExperience = () => {
           : "xl:px-40 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 flex-col-reverse"
       } flex`}
     >
-      <div className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">
+      <div data-aos="fade-right" className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">
         <div className="space-y-3">
           <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {data.subheading}
@@ -57,7 +57,7 @@ const HeroSmesExperience = () => {
           </Link>
         </div>
       </div>
-      <div className="xl:max-w-3xl max-w-auto">
+      <div data-aos="fade-left" className="xl:max-w-3xl max-w-auto">
       <Image
           src={`${baseUrl}${images.url}`}
           width={0}

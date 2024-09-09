@@ -1,4 +1,5 @@
 "use client";
+import { AOSAnimation } from "@/common/AOSAnimation";
 import { body } from "@/common/FontFamily";
 import Footer from "@/components/HeadFoot/Footer";
 import Header from "@/components/HeadFoot/Header";
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const Layouts: React.FC<Props> = ({ children }) => {
+  AOSAnimation()
   const isMaintenance = false;
 
   return (

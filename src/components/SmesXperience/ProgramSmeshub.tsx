@@ -9,8 +9,6 @@ import { IoCheckmarkDone } from "react-icons/io5";
 
 const ProgramSmeshub = () => {
   const { isMobile } = Mobile();
-  const [visibleItems, setVisibleItems] = useState(4); // Mulai dengan 4 item
-  const [loading, setLoading] = useState(false);
   const [data, setData] = useState<any>([]);
 
   useEffect(() => {
@@ -25,16 +23,6 @@ const ProgramSmeshub = () => {
     };
     dataProgramSmeshub();
   }, []);
-
-  const handleShowMore = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setVisibleItems(visibleItems + 4); // Tambah 4 item lagi setiap kali diklik
-      setLoading(false);
-    }, 1500); // Simulasi loading selama 1 detik
-  };
-
-  const currentItems = data.slice(0, visibleItems);
 
   return (
     <div className={`${isMobile ? "px-5" : "xl:px-40 lg:px-20 md:px-8"} mt-32 bg-gray-200 py-10 relative`}>
@@ -52,6 +40,7 @@ const ProgramSmeshub = () => {
       <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
             {data.slice(0, 3).map((list: any, idx: any) => (
               <div
+               data-aos="zoom-in"
                 key={idx}
                 className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] border    p-5 rounded-md"
               >
@@ -76,6 +65,7 @@ const ProgramSmeshub = () => {
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
             {data.slice(3, data.length).map((list: any, idx: any) => (
               <div
+              data-aos="zoom-in"
                 key={idx}
                 className="bg-gradient-to-tl from-[#F6F6F9] to-[#EEEEF560] p-5 rounded-md"
               >

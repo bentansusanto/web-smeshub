@@ -31,7 +31,7 @@ const HeroSmesPeople = () => {
           : "xl:px-32 lg:px-24 md:px-8 lg:flex-row lg:justify-between mt-20 flex-col-reverse"
       } flex`}
     >
-      <div className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">
+      <div data-aos="fade-right" className="space-y-10 xl:max-w-xl lg:max-w-lg w-auto mt-10 lg:mt-0">
         <div className="space-y-3">
           <p className=" text-sm text-orange-500 leading-relaxed font-semibold">
             {data.subheading}
@@ -53,16 +53,8 @@ const HeroSmesPeople = () => {
             </Link>
           </button>
         </div>
-        {/* Success client */}
-        {/* <div className="flex items-center space-x-4">
-            <Image src={image.SuccessClient} alt="success-client"/>
-            <div className="space-y-2">
-                <h3 className={`${heading.className} font-semibold text-2xl`}>{heroData.client_success}</h3>
-                <p className="text-gray-400 text-sm">Success client</p>
-            </div>
-        </div> */}
       </div>
-      <div className="xl:max-w-2xl max-w-auto">
+      <div data-aos="fade-left" className="xl:max-w-2xl max-w-auto">
         <Image src={`${baseUrl}${images.url}`} width={0} height={0} className='w-auto' alt="bg-home-herosection" />
       </div>
     </div>

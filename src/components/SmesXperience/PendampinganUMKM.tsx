@@ -28,9 +28,9 @@ const PendampinganUMKM = () => {
     <div className={`${
         isMobile
           ? "px-5 mt-40 flex-col gap-10"
-          : "xl:px-32 lg:px-20 md:px-8 mt-40 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
+          : "xl:px-32 lg:px-20 md:px-8 mt-28 lg:flex-row flex-col lg:items-center xl:justify-between gap-10"
       } flex relative`}>
-      <div className="space-y-5 max-w-xl">
+      <div data-aos="fade-left" className="space-y-5 max-w-xl">
         <div>
         <Image
           src={`${baseUrl}${icon.url}`}
@@ -53,7 +53,7 @@ const PendampinganUMKM = () => {
           <BsArrowRight className="text-xl"/>
         </button>
       </div>
-      <div className="xl:max-w-3xl lg:max-w-xl">
+      <div data-aos="fade-right" className="xl:max-w-3xl lg:max-w-xl">
       <Image
           src={`${baseUrl}${images.url}`}
           width={0}

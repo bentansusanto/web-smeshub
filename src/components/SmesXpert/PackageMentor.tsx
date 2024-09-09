@@ -42,6 +42,7 @@ const PackageMentor = () => {
       <div className="flex items-center md:flex-row flex-col gap-8 justify-center mt-10 md:max-w-3xl px-5 md:px-0 mx-auto">
         {packageMentor.package.map((list, idx) => (
           <div
+          data-aos="fade-up"
             key={idx}
             className={`${
               idx === 0 ? "bg-[#003DB6] text-white" : "bg-white"

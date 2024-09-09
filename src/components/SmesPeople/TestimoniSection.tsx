@@ -27,7 +27,7 @@ const TestimoniSection = () => {
         </h1>
       </div>
       {/* list testimoni */}
-      <div className="xl:px-40 lg:px-20 md:px-8 px-5 mt-10">
+      <div data-aos="fade-up" className="xl:px-40 lg:px-20 md:px-8 px-5 mt-10">
         <Slider {...settings}>
           {data.map((list: any, idx: any) => (
             <div key={idx} className="bg-white w-full rounded-xl">

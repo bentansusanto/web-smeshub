@@ -12,14 +12,14 @@ const ClientsSmeshub = () => {
     
   return (
     <div className={`${isMobile? "px-5" : "xl:px-40 lg:px-20 px-8"} mt-32 relative`}>
-        <div className="text-center mx-auto space-y-3 max-w-3xl">
+        <div data-aos="fade-up" className="text-center mx-auto space-y-3 max-w-3xl">
         <h1
           className={`${heading.className} font-medium xl:text-[20px] lg:text-[18px] text-2xl leading-snug`}
         >
           {clientSmeshubData.heading}
         </h1>
       </div>
-      <div className="flex flex-wrap max-w-5xl items-center mx-auto mt-10 justify-center gap-8">
+      <div data-aos="fade-up" className="flex flex-wrap max-w-5xl items-center mx-auto mt-10 justify-center gap-8">
               {
                   data.map((list:any, idx:any) => (
                       <div key={idx} className="xl:w-32 lg:w-28 w-28">

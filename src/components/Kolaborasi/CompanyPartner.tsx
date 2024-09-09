@@ -32,7 +32,7 @@ const CompanyPartner = () => {
             : "xl:px-32 lg:px-20 md:px-8 mt-32 lg:flex-row flex-col lg:items-center xl:gap-20 gap-10"
         } flex`}
       >
-        <div className="xl:max-w-3xl lg:max-w-xl">
+        <div data-aos="fade-right" className="xl:max-w-3xl lg:max-w-xl">
         <Image
           src={`${baseUrl}${images.url}`}
           width={0}
@@ -41,7 +41,7 @@ const CompanyPartner = () => {
           alt="bg-pendampingan-umkm"
         />
         </div>
-        <div className="space-y-5 max-w-xl">
+        <div data-aos="fade-left" className="space-y-5 max-w-xl">
           <div>
           <Image
           src={`${baseUrl}${icon.url}`}
