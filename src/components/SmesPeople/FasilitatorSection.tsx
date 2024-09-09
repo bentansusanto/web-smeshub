@@ -51,7 +51,7 @@ const FasilitatorSection = () => {
         </div>
         <Link href={fasilitatorData.link}>
           <button className="text-[#002774] py-3 flex items-center space-x-2 rounded-full text-sm font-medium">
-            <p>Gabung Sekarang</p>
+            <p className='font-semibold'>Gabung Sekarang</p>
             <BsArrowRight className="text-xl"/>
           </button>
         </Link>
