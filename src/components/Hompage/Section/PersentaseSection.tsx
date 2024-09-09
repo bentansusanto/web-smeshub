@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { FaPlay } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 const PersentaseSection = () => {
   const { isMobile } = Mobile();
@@ -66,19 +67,25 @@ const PersentaseSection = () => {
       <div
         className={`${
           !openModal && "hidden"
-        } fixed top-0 w-screen h-screen bg-[#08080880]`}
+        } fixed z-40 top-0 w-screen h-screen bg-[#08080880]`}
       >
         <div className="flex h-screen items-center justify-center">
-          <iframe
-            width="1259"
-            height="708"
-            src="https://www.youtube.com/embed/fkd_4R2G3rI"
-            title="How To Embed YouTube Videos in React / Gatsby (and make them Responsive)"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
+          <div className="flex items-start gap-5">
+            <iframe
+            className="rounded-lg"
+              width="1259"
+              height="708"
+              src="https://www.youtube.com/embed/fkd_4R2G3rI"
+              title="How To Embed YouTube Videos in React / Gatsby (and make them Responsive)"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          <div onClick={() => setOpenModal(false)}>
+            <IoClose className="text-4xl text-white"/>
+          </div>
+          </div>
         </div>
       </div>
     </div>
